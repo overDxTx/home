@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -59,8 +60,13 @@ header{position:sticky;top:0;z-index:5;background:rgba(242,244,243,.93);backdrop
 .partners{display:flex;align-items:center;gap:10px}
 .partners .logo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--rule);padding:5px 10px}
 .partners .logo:hover{border-color:var(--ink)}
-.partners img{display:block;height:26px;width:auto}
-@media (max-width:860px){.partners{display:none}}
+.partners img{display:block;height:52px;width:auto}
+@media (max-width:860px){
+  .partners .logo:last-child{display:none}
+  .partners .logo{padding:4px 6px}
+  /* בנייד מוצג רק החלק הימני של לוגו הר"י — הסמל, בלי הטקסט. רוחב החיתוך: */
+  .partners img{height:34px;width:23px;object-fit:cover;object-position:right center}
+}
 nav ul{display:flex;flex-wrap:wrap;gap:22px;list-style:none;margin:0;padding:0;font-size:0.9375rem}
 nav a{color:var(--ink);text-decoration:none;padding-block:4px;border-bottom:1px solid transparent}
 nav a:hover{border-bottom-color:var(--signal)}
@@ -145,7 +151,14 @@ footer p{margin:0 0 6px}
 }
 
 /* ---- accessibility toolbar + current-section marker ---- */
-.a11ybar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:8px}
+.a11ywrap{display:flex;align-items:center;gap:8px;padding-block:8px}
+.a11ybar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;border:1px solid var(--rule);border-radius:22px;padding:5px 12px}
+.a11ybar button{border-radius:999px}
+.a11ybar .x{border:none;background:none;padding:7px 6px;font-size:0.9375rem;margin-inline-start:2px}
+.a11yicon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:50%;cursor:pointer}
+.a11yicon:hover{border-color:var(--ink)}
+.a11yicon svg{display:block;width:22px;height:22px}
+[hidden]{display:none!important}
 .a11ybar .lbl{font-size:0.8125rem;margin-inline-end:2px}
 .a11ybar button{font-family:inherit;font-size:0.875rem;line-height:1.1;background:var(--surface);color:var(--ink);border:1px solid var(--rule);padding:8px 12px;cursor:pointer}
 .a11ybar button:hover{border-color:var(--ink)}
@@ -197,14 +210,18 @@ html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 
         <li><a href="#about">אודות</a></li>
       </ul>
     </nav>
-    <div class="a11ybar" role="group" aria-label="כלי נגישות">
-      <span class="lbl" id="a11y-text">גודל טקסט</span>
-      <button type="button" class="big" id="fontUp" aria-describedby="a11y-text" aria-label="הגדלת גודל הטקסט">א+</button>
-      <button type="button" class="big" id="fontDown" aria-describedby="a11y-text" aria-label="הקטנת גודל הטקסט">א−</button>
-      <span class="lbl" id="a11y-contrast">ניגודיות</span>
-      <button type="button" id="conUp" aria-describedby="a11y-contrast" aria-label="הגברת הניגודיות">+</button>
-      <button type="button" id="conDown" aria-describedby="a11y-contrast" aria-label="הפחתת הניגודיות">−</button>
-      <button type="button" id="a11yReset">איפוס</button>
+    <div class="a11ywrap">
+      <button type="button" id="a11yOpen" class="a11yicon" aria-expanded="true" aria-controls="a11ybar" aria-label="פתיחת סרגל נגישות" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.3" r="1.9" fill="currentColor" stroke="none"/><path d="M4.6 8.4h14.8"/><path d="M12 8.4v6"/><path d="M12 14.4l-3.1 7"/><path d="M12 14.4l3.1 7"/></svg></button>
+      <div class="a11ybar" id="a11ybar" role="group" aria-label="כלי נגישות">
+        <span class="lbl" id="a11y-text">גודל טקסט</span>
+        <button type="button" class="big" id="fontUp" aria-describedby="a11y-text" aria-label="הגדלת גודל הטקסט">א+</button>
+        <button type="button" class="big" id="fontDown" aria-describedby="a11y-text" aria-label="הקטנת גודל הטקסט">א−</button>
+        <span class="lbl" id="a11y-contrast">ניגודיות</span>
+        <button type="button" id="conUp" aria-describedby="a11y-contrast" aria-label="הגברת הניגודיות">+</button>
+        <button type="button" id="conDown" aria-describedby="a11y-contrast" aria-label="הפחתת הניגודיות">−</button>
+        <button type="button" id="a11yReset">איפוס</button>
+        <button type="button" id="a11yClose" class="x" aria-label="סגירת סרגל נגישות">✕</button>
+      </div>
       <span class="sr-only" id="a11yStatus" role="status" aria-live="polite"></span>
     </div>
   </div>
@@ -282,7 +299,7 @@ html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 
     <div class="track">
       <h3>קהילה מקצועית</h3>
       <div>
-        <p>אבחון יתר אינו נעצר בגבולות ההתמחות וגם לא בגבולות המקצוע. החברה מאגדת רופאות ורופאים מכל ההתמחויות, שמזהים את התופעה בשדה שלהם: באונקולוגיה ובכירורגיה, בריבוי תרופות בגיל המבוגר, בבדיקות סקר ובבירורים שגרתיים.</p>
+        <p>אבחון יתר אינו נעצר בגבולות ההתמחות, וגם לא בגבולות המקצוע. החברה מאגדת רופאות ורופאים מכל ההתמחויות שמזהים את התופעה בשדה שלהם: באונקולוגיה ובכירורגיה, בריבוי תרופות בגיל המבוגר, בבדיקות סקר ובבירורים שגרתיים.</p>
         <p>לצידם, החברות פתוחה כחברות נלווית לאנשי ונשות מקצוע מכל הסקטורים שהעשייה הרפואית עוברת דרכם: אֲחָיוּת, רוקחות, פיזיותרפיה ומקצועות הבריאות, אפידמיולוגיה וכלכלת בריאות, מינהל ומדיניות.</p>
         <p>אנחנו בונים מסגרת שתאפשר לחברות ולחברים להיפגש, ללמוד ולקדם יחד עבודה מקצועית ומחקר בתחום.</p>
       </div>
@@ -369,9 +386,8 @@ html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 
       <!-- אם קובץ הלוגו הוא גרסה לבנה (לפוטר כהה), יש להחליף לקובץ הצבעוני -->
       <a class="logo" href="https://www.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://associations.ima.org.il/images/footer-hri-logo.png" alt="ההסתדרות הרפואית בישראל"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
       <a class="logo" href="https://associations.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://ima-associations2.s3.amazonaws.com/4190_24d31727-738e-48f6-84d6-35216298891d.png" alt="האיגודים המדעיים של הר״י"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
-      <p>החברה פועלת כחברה מדעית במסגרת האיגודים המדעיים של ההסתדרות הרפואית בישראל.</p>
+      <p>החברה למניעת אבחון יתר וטיפול יתר פועלת כחברה מדעית במסגרת האיגודים המדעיים של ההסתדרות הרפואית בישראל.</p>
     </div>
-    <p>החברה למניעת אבחון יתר וטיפול יתר — חברה מדעית בהסתדרות הרפואית בישראל.</p>
     <p>התכנים באתר מיועדים למידע מקצועי וציבורי ואינם מהווים ייעוץ רפואי או תחליף להתייעצות עם רופא.</p>
     <!-- חובה חוקית: יש לכתוב את דף הצהרת הנגישות ולציין בו את פרטי רכז/ת הנגישות, לפני העלייה לאוויר -->
     <p><a href="accessibility.html">הצהרת נגישות</a> — לרבות דרכי פנייה בנושאי נגישות.</p>
@@ -382,22 +398,34 @@ html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 
 (function(){
   var root=document.documentElement, S=document.getElementById('a11yStatus');
   var STEPS=[87.5,100,112.5,125,137.5,150], CON=['רגילה','גבוהה','מרבית'];
-  var f=1, c=0;
-  function store(){ try{ localStorage.setItem('a11y',f+','+c); }catch(e){} }
+  var f=1, c=0, o=1;
+  function store(){ try{ localStorage.setItem('a11y',f+','+c+','+o); }catch(e){} }
   function say(t){ if(S) S.textContent=t; }
   function apply(){
     root.style.fontSize=STEPS[f]+'%';
     if(c===0) root.removeAttribute('data-contrast'); else root.setAttribute('data-contrast',c);
   }
-  try{ var v=(localStorage.getItem('a11y')||'').split(','); if(v.length===2){
+  try{ var v=(localStorage.getItem('a11y')||'').split(','); if(v.length>=2){
         f=Math.min(STEPS.length-1,Math.max(0,parseInt(v[0],10)||1));
-        c=Math.min(2,Math.max(0,parseInt(v[1],10)||0)); } }catch(e){}
+        c=Math.min(2,Math.max(0,parseInt(v[1],10)||0));
+        if(v.length>2) o=(v[2]==='0')?0:1; } }catch(e){}
   apply();
   function bind(id,fn){ var b=document.getElementById(id); if(b) b.addEventListener('click',fn); }
   bind('fontUp',function(){ f=Math.min(STEPS.length-1,f+1); apply(); store(); say('גודל טקסט '+STEPS[f]+' אחוז'); });
   bind('fontDown',function(){ f=Math.max(0,f-1); apply(); store(); say('גודל טקסט '+STEPS[f]+' אחוז'); });
   bind('conUp',function(){ c=Math.min(2,c+1); apply(); store(); say('ניגודיות '+CON[c]); });
   bind('conDown',function(){ c=Math.max(0,c-1); apply(); store(); say('ניגודיות '+CON[c]); });
+  var bar=document.getElementById('a11ybar'), openBtn=document.getElementById('a11yOpen');
+  function setOpen(v,move){
+    o=v?1:0;
+    if(bar) bar.hidden=!v;
+    if(openBtn){ openBtn.hidden=v; openBtn.setAttribute('aria-expanded',v?'true':'false'); }
+    if(move){ var t=v?document.getElementById('fontUp'):openBtn; if(t&&!t.hidden) t.focus(); }
+    try{ update(); }catch(e){}
+  }
+  bind('a11yOpen',function(){ setOpen(true,true); store(); say('סרגל הנגישות נפתח'); });
+  bind('a11yClose',function(){ setOpen(false,true); store(); say('סרגל הנגישות נסגר'); });
+  setOpen(o===1,false);
   bind('a11yReset',function(){ f=1; c=0; apply(); store(); say('הגדרות התצוגה אופסו'); });
 
   // mark the section currently in view
