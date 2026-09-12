@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>החברה למניעת אבחון יתר וטיפול יתר</title>
+<meta name="description" content="חברה מדעית בהסתדרות הרפואית בישראל, הפועלת לצמצום אבחון יתר, טיפול יתר ועשייה רפואית שתועלתה נמוכה.">
+<meta property="og:title" content="החברה למניעת אבחון יתר וטיפול יתר">
+<meta property="og:description" content="רפואה טובה יודעת גם מתי לא לבדוק ומתי לא לטפל.">
+<meta property="og:locale" content="he_IL">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22%23C8102E%22%20stroke-width%3D%229%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M34%2026%20L32%2031%20C30%2048%2033%2050%2039%2052%22%2F%3E%3Cpath%20d%3D%22M51%2026%20L53%2030%20C55%2048%2050%2055%2039%2052%22%2F%3E%3Cpath%20d%3D%22M43%2055%20C42%2074%2050%2086%2060%2069%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2262%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4F3;
+  --surface:#FFFFFF;
+  --ink:#000000;
+  --ink-soft:#000000;
+  --rule:#D2D9D7;
+  --verdigris:#2F6B63;
+  --verdigris-deep:#1F4A45;
+  --signal:#BE8A2A;
+  --measure:66ch;
+  /* Rubik בלבד (SIL Open Font License 1.1). ההיררכיה נשענת על משקל וגודל, לא על ניגוד גופנים */
+  --serif:"Rubik","Segoe UI",Arial,sans-serif;
+  --sans:"Rubik","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;font-weight:400;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.24;letter-spacing:-.018em;margin:0}
+p{margin:0 0 1em}
+a{color:var(--ink);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid #000;outline-offset:2px;box-shadow:0 0 0 6px #F6E9CE}
+.join :focus-visible{outline-color:#fff;box-shadow:0 0 0 6px rgba(0,0,0,.5)}
+[id]{scroll-margin-top:var(--hdr,150px)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:24px}
+.measure{max-width:var(--measure)}
+
+/* skip link */
+.skip{position:absolute;inset-inline-start:-9999px;top:0;background:var(--surface);padding:10px 16px;z-index:10}
+.skip:focus{inset-inline-start:12px;top:12px}
+
+/* header */
+header{position:sticky;top:0;z-index:5;background:rgba(242,244,243,.93);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.bar{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline;justify-content:space-between;padding-block:14px}
+.mark{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.0312rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.glyph{width:42px;height:42px;flex:none}
+.mark .wordmark span{display:block;font-family:var(--sans);font-size:0.8125rem;font-weight:400;color:var(--ink-soft);letter-spacing:.02em}
+.bar2{display:flex;flex-wrap:wrap;gap:6px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule)}
+.partners{display:flex;align-items:center;gap:10px}
+.partners .logo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--rule);padding:5px 10px}
+.partners .logo:hover{border-color:var(--ink)}
+.partners img{display:block;height:26px;width:auto}
+@media (max-width:860px){.partners{display:none}}
+nav ul{display:flex;flex-wrap:wrap;gap:22px;list-style:none;margin:0;padding:0;font-size:0.9375rem}
+nav a{color:var(--ink);text-decoration:none;padding-block:4px;border-bottom:1px solid transparent}
+nav a:hover{border-bottom-color:var(--signal)}
+
+/* hero */
+.hero{padding-block:64px 52px}
+.hero-text{max-width:var(--measure)}
+@media (min-width:1000px){
+  .plate{margin-top:0;border-inline-start:1px solid var(--rule);padding-inline:22px 0}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:52px;align-items:center}
+  .hero h1{font-size:clamp(2rem,3.4vw,2.75rem)}
+  .hero .lede{margin-top:22px}
+}
+.hero h1{font-size:clamp(2.0625rem,5.4vw,3.5rem);font-weight:700;letter-spacing:-.03em;max-width:16ch}
+.hero .lede{font-size:clamp(1.125rem,2.1vw,1.3125rem);color:var(--ink-soft);max-width:52ch;margin-top:26px;font-weight:300;line-height:1.65}
+.plate{margin-top:44px;background:none;border:none;padding:0}
+.plate img{display:block;width:100%;height:auto}
+.credit{display:block;margin-top:6px;font-size:0.8125rem}
+.caption{margin:10px 0 0;font-size:0.9062rem;color:var(--ink-soft);max-width:62ch;line-height:1.6}
+
+/* sections */
+section{padding-block:64px;border-top:1px solid var(--rule)}
+section h2{font-size:clamp(1.5625rem,3.2vw,2.0625rem);margin-bottom:10px}
+.sub{color:var(--ink-soft);max-width:var(--measure);margin-bottom:34px}
+
+/* definitions */
+dl{margin:0}
+.def{padding-block:22px;border-top:1px solid var(--rule)}
+.def:first-of-type{border-top:none;padding-top:4px}
+.def dt{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:-.015em}
+.def dt em{font-style:normal;font-family:var(--sans);font-size:0.875rem;font-weight:400;color:var(--ink-soft);margin-inline-start:10px;letter-spacing:.01em}
+.def dd{margin:6px 0 0;max-width:var(--measure);color:var(--ink-soft)}
+
+/* harms */
+.harms{list-style:none;margin:0 0 28px;padding:0;max-width:var(--measure)}
+.harms li{padding-block:12px;border-top:1px solid var(--rule);padding-inline-start:34px;position:relative}
+.harms li::before{content:"👎";position:absolute;inset-inline-start:0;top:12px;font-size:1rem;line-height:1.7}
+.note{border-inline-start:2px solid var(--verdigris);padding-inline-start:18px;max-width:var(--measure);color:var(--ink);font-size:1.0938rem;font-weight:600}
+
+/* tracks */
+.track{padding-block:30px;border-top:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:10px 40px;align-items:start}
+.track:first-of-type{border-top:none}
+.track h3{font-size:1.4375rem}
+.track p{margin:0;color:var(--ink-soft);max-width:56ch}
+.track p + p{margin-top:10px}
+@media (max-width:720px){.track{grid-template-columns:1fr;gap:8px}}
+
+/* join band */
+.join{background:var(--verdigris-deep);color:#EAF1EF;border-top:none}
+.join h2{color:#fff}
+.join p{color:#EAF1EF;max-width:56ch}
+.join a.cta{display:inline-block;margin-top:14px;background:#fff;color:#000;text-decoration:none;padding:13px 26px;font-weight:600;font-size:1rem}
+.join a.cta:hover{background:#F6E9CE}
+.join .small{font-size:0.9375rem;color:#EAF1EF;margin-top:22px}
+.join .small a{color:#fff}
+
+/* resources */
+.res{list-style:none;margin:0;padding:0;max-width:78ch}
+.res li{padding-block:16px;border-top:1px solid var(--rule)}
+.res li:first-child{border-top:none}
+.res a{font-family:var(--serif);font-size:1.125rem;font-weight:500;text-decoration:none;border-bottom:1px solid var(--rule)}
+.res a:hover{border-bottom-color:var(--ink)}
+.res span{display:block;font-size:0.9688rem;color:var(--ink-soft);margin-top:3px}
+
+/* board + contact */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px 48px}
+.cols h3{font-size:1.1875rem;margin-bottom:10px}
+.people{list-style:none;margin:0;padding:0;font-size:1.0312rem}
+.people li{padding-block:5px}
+.people .role{color:var(--ink-soft);font-size:0.9062rem}
+
+footer{border-top:1px solid var(--rule);padding-block:32px 44px;font-size:0.9062rem;color:var(--ink-soft)}
+footer p{margin:0 0 6px}
+.affil{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;padding-bottom:26px;margin-bottom:24px;border-bottom:1px solid var(--rule)}
+.affil .logo{display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--rule);padding:10px 16px}
+.affil .logo:hover{border-color:var(--verdigris)}
+.affil img{display:block;height:40px;width:auto}
+.affil p{max-width:36ch;margin:0;font-size:0.875rem;line-height:1.55}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+/* ---- accessibility toolbar + current-section marker ---- */
+.a11ybar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:8px}
+.a11ybar .lbl{font-size:0.8125rem;margin-inline-end:2px}
+.a11ybar button{font-family:inherit;font-size:0.875rem;line-height:1.1;background:var(--surface);color:var(--ink);border:1px solid var(--rule);padding:8px 12px;cursor:pointer}
+.a11ybar button:hover{border-color:var(--ink)}
+.a11ybar .big{font-size:1.0625rem;font-weight:600}
+nav a[aria-current="true"]{font-weight:600;border-bottom:2px solid var(--ink)}
+.affil .logo{background:#fff}
+
+html[data-contrast="1"]{--paper:#FFFFFF;--surface:#FFFFFF;--rule:#4A5451;--ink:#000000;--ink-soft:#000000;--verdigris-deep:#10352F;--signal:#7A5200}
+html[data-contrast="1"] header{background:#FFFFFF}
+html[data-contrast="1"] .dot{stroke:#000}
+
+html[data-contrast="2"]{--paper:#000000;--surface:#000000;--rule:#FFFFFF;--ink:#FFFFFF;--ink-soft:#FFFFFF;--verdigris-deep:#000000;--signal:#FFD400}
+html[data-contrast="2"] header{background:#000000}
+html[data-contrast="2"] a{color:#FFD400}
+html[data-contrast="2"] .glyph g{stroke:#FFFFFF}
+html[data-contrast="2"] .join{border-top:1px solid #FFFFFF}
+html[data-contrast="2"] .join h2,html[data-contrast="2"] .join p,html[data-contrast="2"] .join .small{color:#FFFFFF}
+html[data-contrast="2"] .join a.cta{background:#FFD400;color:#000000}
+html[data-contrast="2"] .join .small a{color:#FFD400}
+html[data-contrast="2"] .note{border-inline-start-color:#FFD400}
+html[data-contrast="2"] .fill{background:#4A3A00;color:#FFD400}
+html[data-contrast="2"] :focus-visible{outline-color:#FFD400;box-shadow:0 0 0 6px #000000}
+html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 0 0 6px #000000}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">דילוג לתוכן</a>
+
+<header>
+  <div class="wrap bar">
+    <div class="mark">
+      <span class="wordmark">החברה למניעת אבחון יתר וטיפול יתר<span>חברה מדעית בהסתדרות הרפואית בישראל</span></span>
+      <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="40" fill="none" stroke="#C8102E" stroke-width="9"/><g fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"><path d="M34 26 L32 31 C30 48 33 50 39 52"/><path d="M51 26 L53 30 C55 48 50 55 39 52"/><path d="M43 55 C42 74 50 86 60 69"/><circle cx="68" cy="62" r="7"/></g></svg>
+    </div>
+    <div class="partners">
+      <a class="logo" href="https://www.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://associations.ima.org.il/images/footer-hri-logo.png" alt="ההסתדרות הרפואית בישראל"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
+      <a class="logo" href="https://associations.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://ima-associations2.s3.amazonaws.com/4190_24d31727-738e-48f6-84d6-35216298891d.png" alt="האיגודים המדעיים של הר״י"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
+    </div>
+  </div>
+  <div class="wrap bar2">
+    <nav aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="#what">העניין</a></li>
+        <li><a href="#why">למה זה חשוב</a></li>
+        <li><a href="#work">הפעילות שלנו</a></li>
+        <li><a href="#join">הצטרפות</a></li>
+        <li><a href="#resources">מקורות</a></li>
+        <li><a href="#contact">יצירת קשר</a></li>
+        <li><a href="#about">אודות</a></li>
+      </ul>
+    </nav>
+    <div class="a11ybar" role="group" aria-label="כלי נגישות">
+      <span class="lbl" id="a11y-text">גודל טקסט</span>
+      <button type="button" class="big" id="fontUp" aria-describedby="a11y-text" aria-label="הגדלת גודל הטקסט">א+</button>
+      <button type="button" class="big" id="fontDown" aria-describedby="a11y-text" aria-label="הקטנת גודל הטקסט">א−</button>
+      <span class="lbl" id="a11y-contrast">ניגודיות</span>
+      <button type="button" id="conUp" aria-describedby="a11y-contrast" aria-label="הגברת הניגודיות">+</button>
+      <button type="button" id="conDown" aria-describedby="a11y-contrast" aria-label="הפחתת הניגודיות">−</button>
+      <button type="button" id="a11yReset">איפוס</button>
+      <span class="sr-only" id="a11yStatus" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="wrap hero">
+  <div class="hero-text">
+    <h1>רפואה טובה יודעת גם מתי לא להגזים</h1>
+  <p class="lede">ככל שהיכולת שלנו לגלות משתפרת, אנחנו מוצאים יותר — אבל לא כל ממצא הוא מחלה שכדאי לנסות לאבחן ולרפא. החברה למניעת אבחון יתר וטיפול יתר פועלת כדי שהשיקול הזה יהיה חלק מהשגרה הקלינית, מההכשרה הרפואית ומהשיחה עם המטופלים.</p>
+  </div>
+
+  <figure class="plate">
+    <img src="overdiagnosis-hero.jpg" width="1024" height="559" alt="רופא עומד ליד מיטת אשפוז במחלקה פנימית ומעיין בדף תוצאות. המטופל שוכב במיטה כשהוא כמעט מכוסה כולו בערימות עצומות של תדפיסי בדיקות, תיקים רפואיים ומסכים שמציגים תוצאות ודרישות לבדיקות נוספות.">
+    <figcaption class="caption">כשכל ממצא גורר בדיקה נוספת, המטופל נעלם מתחת לתוצאות.<span class="credit">התמונה נוצרה באמצעות <span lang="en" dir="ltr">Google Gemini</span></span></figcaption>
+  </figure>
+</div>
+
+<section id="what" aria-labelledby="h-what">
+  <div class="wrap">
+    <h2 id="h-what">מה זה בעצם</h2>
+    <p class="sub">שלושה מושגים שחוזרים בכל דיון בתחום, ושכדאי להבחין ביניהם.</p>
+    <dl>
+      <div class="def">
+        <dt>אבחון יתר <em>(<span lang="en">Overdiagnosis</span>)</em></dt>
+        <dd>אבחון של מחלה שאכן קיימת, אך לא הייתה גורמת לתסמינים או לתמותה גם אילו לא הייתה מאובחנת. זה אינו אבחון שגוי ואינו תוצאה חיובית כוזבת — המחלה נמצאת שם, אך הגילוי שלה אינו מיטיב עם מי שאובחן.</dd>
+      </div>
+      <div class="def">
+        <dt>עשיית יתר <em>(<span lang="en">Low-value care</span> / רפואה בעלת ערך נמוך)</em></dt>
+        <dd>בדיקה, בירור, פרוצדורה או טיפול שתועלתם למטופל נמוכה במצבו הקליני הנוכחי — גם אם באותם אמצעים יש תועלת רבה במצבים אחרים. לעיתים קרובות הנזק המצטבר עולה על התועלת.</dd>
+      </div>
+      <div class="def">
+        <dt>מדיקליזציה <em>(<span lang="en">Medicalization</span>)</em>, הרחבת הגדרות ומסחור מחלות</dt>
+        <dd>הורדת סף האבחון והפיכת תופעות אנושיות שכיחות למחלה, בלי שהוכחה תועלת למי שיאובחן. התוצאה היא אוכלוסייה גדולה יותר של "חולים" — ולא בהכרח אנשים בריאים יותר.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section id="why" aria-labelledby="h-why">
+  <div class="wrap">
+    <h2 id="h-why">למה זה חשוב</h2>
+    <p class="sub">קיומה של תופעת אבחון היתר הוכח מחקרית ברמת האוכלוסייה. עם זאת, כשמטופל בודד כבר אובחן, לרוב לא ניתן לדעת מראש אם הטיפול יועיל לו או לא — ולכן רוב המאובחנים יקבלו טיפול. כך מתחילה שרשרת הנזק:</p>
+    <ul class="harms">
+      <li>תיוג של אדם בריא כחולה, על החרדה ותופעות הלוואי החברתיות והביטוחיות שנלוות לכך.</li>
+      <li>סיבוכים של פרוצדורות, תופעות לוואי של טיפולים וחשיפה לקרינה — אצל מי שלא היה נשכר מהם ממילא.</li>
+      <li>ממצאים מקריים שגוררים שרשרת בירורים נוספים, שכל אחד מהם עלול לייצר ממצא נוסף.</li>
+      <li>הסטה של זמן רופא, תורים ומשאבים ממי שבאמת זקוק להם, וקושי גובר להפריד בין עיקר לטפל ברשימת בעיות ארוכה.</li>
+    </ul>
+    <p class="note">המטרה אינה לבדוק פחות או לטפל פחות, אלא להימנע מעשייה שאינה מועילה. עבודה בתחום הזה צריכה להיעשות בשיקול דעת ובזהירות, כדי שלא תיווצר הרתעה מבירורים ומטיפולים מוצדקים.</p>
+  </div>
+</section>
+
+<section id="work" aria-labelledby="h-work">
+  <div class="wrap">
+    <h2 id="h-work">הפעילות שלנו</h2>
+    <p class="sub">שלושה צירים שבהם מתרכזת עבודת החברה בשנה הקרובה.</p>
+
+    <div class="track">
+      <h3>בוחרים בתבונה</h3>
+      <div>
+        <p>"בוחרים בתבונה" היא הגרסה הישראלית ליוזמת <span lang="en">Choosing Wisely</span> העולמית. האיגודים המדעיים של הר"י מנסחים, כל אחד בתחומו, המלצות "אל תעשה" מבוססות ראיות, לשימוש משותף של רופאים ומטופלים בחדר הבדיקה.</p>
+        <p>החברה שותפה ליוזמה ומקדמת את השלב שבו הרבה תוכניות דומות נעצרות: לא רק כתיבת ההמלצות, אלא ההטמעה שלהן בפועל בשגרת העבודה.</p>
+      </div>
+    </div>
+
+    <div class="track">
+      <h3>חינוך רפואי</h3>
+      <div>
+        <p>אבחון יתר כמעט אינו נלמד באופן מסודר. אנחנו מפתחים מערכי שיעור בפורמטים שונים — הרצאה, סדנה ומיני-קורס — לסטודנטים לרפואה, למתמחים ולמומחים בתחומי ההתמחות השונים, לשילוב בבתי הספר לרפואה, בתוכניות ההתמחות ובלימודי ההמשך.</p>
+      </div>
+    </div>
+
+    <div class="track">
+      <h3>קהילה מקצועית</h3>
+      <div>
+        <p>החברה מאגדת רופאות ורופאים מכל ההתמחויות שמזהים את התופעה בשדה שלהם — באונקולוגיה ובכירורגיה, בריבוי תרופות בגיל המבוגר, בבדיקות סקר ובבירורים שגרתיים.</p>
+        <p>אנחנו בונים מסגרת שתאפשר לחברים להיפגש, ללמוד ולקדם יחד עבודה מקצועית ומחקר בתחום.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join" aria-labelledby="h-join">
+  <div class="wrap">
+    <h2 id="h-join">מצטרפים לחברה</h2>
+    <p>מזהים את התופעה גם במחלקה או במרפאה שלכם? רוצים לקחת חלק בשינוי השיח הרפואי בישראל? הצטרפו אלינו לחברה. החברות פתוחה לרופאות ורופאים חברי הר"י מכל תחומי העיסוק וההתמחויות, וכן לחברות וחברים נלווים מכל הסקטורים.</p>
+    <a class="cta" href="https://www.ima.org.il/main/forms/formjoinunion.aspx" target="_blank" rel="noopener noreferrer">למילוי טופס הצטרפות (באתר הר"י)<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+    <p class="small">מתלבטים, או רוצים לשמוע עוד לפני שמצטרפים? <a href="#contact">כתבו לנו</a>.</p>
+  </div>
+</section>
+
+<section id="resources" aria-labelledby="h-res">
+  <div class="wrap">
+    <h2 id="h-res">מקורות וקריאה נוספת</h2>
+    <p class="sub">חומרים בעברית ובאנגלית, למי שרוצה להעמיק או ללמד.</p>
+    <ul class="res">
+      <li>
+        <a href="https://www.ima.org.il/MedicineQuality/ChoosingWisely.aspx" target="_blank" rel="noopener noreferrer">בוחרים בתבונה — הר"י<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+        <span>ההמלצות הישראליות של האיגודים המדעיים, לרופאים ולמטופלים.</span>
+      </li>
+      <li>
+        <a href="https://www.wikirefua.org.il/w/index.php?title=%D7%9E%D7%A0%D7%99%D7%A2%D7%AA_%D7%90%D7%91%D7%97%D7%95%D7%9F_%D7%99%D7%AA%D7%A8_%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%9C_%D7%99%D7%AA%D7%A8_-_%D7%A0%D7%99%D7%99%D7%A8_%D7%A2%D7%9E%D7%93%D7%94" target="_blank" rel="noopener noreferrer">נייר עמדה: מניעת אבחון יתר וטיפול יתר<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+        <span>מסמך לצוותים הכותבים הנחיות קליניות וניירות עמדה מטעם איגודי הר"י.</span>
+      </li>
+      <li>
+        <a href="https://www.choosingwisely.org" target="_blank" rel="noopener noreferrer" lang="en">Choosing Wisely<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+        <span>היוזמה האמריקאית שהחלה ב-2012, ומאות המלצות של איגודי התמחות.</span>
+      </li>
+      <li>
+        <a href="https://www.bmj.com/too-much-medicine" target="_blank" rel="noopener noreferrer" lang="en">Too Much Medicine — BMJ<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+        <span>אוסף מאמרים וקמפיין מתמשך של ה-<span lang="en">BMJ</span> בנושא רפואה עודפת.</span>
+      </li>
+      <li>
+        <a href="https://jamanetwork.com/collections/44045/less-is-more" target="_blank" rel="noopener noreferrer" lang="en">Less is More — JAMA<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+        <span>סדרת מאמרים על מצבים שבהם פחות רפואה מיטיבה יותר.</span>
+      </li>
+      <li>
+        <a href="https://www.cebm.ox.ac.uk/preventing-overdiagnosis" target="_blank" rel="noopener noreferrer" lang="en">Preventing Overdiagnosis<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+        <span>הכנס המדעי הבינלאומי בתחום, בשיתוף מרכז ה-<span lang="en">CEBM</span> באוניברסיטת אוקספורד.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="about" aria-labelledby="h-contact">
+  <div class="wrap">
+    <h2 id="h-contact">מי אנחנו</h2>
+    <p class="sub">החברה הוקמה ב-2016 כחברה מדעית בהסתדרות הרפואית בישראל. באוגוסט 2026 נבחר ועד חדש, והפעילות מתחדשת.</p>
+    <div class="cols">
+      <div>
+        <h3>ועד החברה</h3>
+        <ul class="people">
+          <li>ד"ר תם אקסלרוד <span class="role">יושב ראש</span></li>
+          <li>פרופ' אהרן (רוני) פיינסטון <span class="role">גזבר</span></li>
+          <li>ד"ר מיכאל האוזר <span class="role">מזכיר החברה</span></li>
+          <li>פרופ' אמנון להד</li>
+          <li>פרופ' (פיזיותרפיה) נועה בן עמי</li>
+          <li>פרופ' דניאל גולדשטיין</li>
+          <li>ד"ר שמואל (מוקי) גבעון</li>
+          <li>ד"ר יקיר קאופמן</li>
+          <li>ד"ר ניר צבר</li>
+        </ul>
+      </div>
+      <div>
+        <h3 id="contact">יצירת קשר</h3>
+        <p>לשאלות, להצעות לשיתוף פעולה, להזמנת הרצאה או סדנה, ולכל דבר אחר:</p>
+        <p><a href="mailto:info@example.org.il">info@example.org.il</a></p>
+        <p class="caption" style="margin-top:18px">עמוד החברה באתר הר"י: <a href="https://www.ima.org.il/MainSiteNew/EditUnion.aspx?UnionId=1005" target="_blank" rel="noopener noreferrer">ההסתדרות הרפואית בישראל<span class="sr-only"> (נפתח בחלון חדש)</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="affil">
+      <!-- אם קובץ הלוגו הוא גרסה לבנה (לפוטר כהה), יש להחליף לקובץ הצבעוני -->
+      <a class="logo" href="https://www.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://associations.ima.org.il/images/footer-hri-logo.png" alt="ההסתדרות הרפואית בישראל"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
+      <a class="logo" href="https://associations.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://ima-associations2.s3.amazonaws.com/4190_24d31727-738e-48f6-84d6-35216298891d.png" alt="האיגודים המדעיים של הר״י"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
+      <p>החברה פועלת כחברה מדעית במסגרת האיגודים המדעיים של ההסתדרות הרפואית בישראל.</p>
+    </div>
+    <p>החברה למניעת אבחון יתר וטיפול יתר — חברה מדעית בהסתדרות הרפואית בישראל.</p>
+    <p>התכנים באתר מיועדים למידע מקצועי וציבורי ואינם מהווים ייעוץ רפואי או תחליף להתייעצות עם רופא.</p>
+    <!-- חובה חוקית: יש לכתוב את דף הצהרת הנגישות ולציין בו את פרטי רכז/ת הנגישות, לפני העלייה לאוויר -->
+    <p><a href="accessibility.html">הצהרת נגישות</a> — לרבות דרכי פנייה בנושאי נגישות.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, S=document.getElementById('a11yStatus');
+  var STEPS=[87.5,100,112.5,125,137.5,150], CON=['רגילה','גבוהה','מרבית'];
+  var f=1, c=0;
+  function store(){ try{ localStorage.setItem('a11y',f+','+c); }catch(e){} }
+  function say(t){ if(S) S.textContent=t; }
+  function apply(){
+    root.style.fontSize=STEPS[f]+'%';
+    if(c===0) root.removeAttribute('data-contrast'); else root.setAttribute('data-contrast',c);
+  }
+  try{ var v=(localStorage.getItem('a11y')||'').split(','); if(v.length===2){
+        f=Math.min(STEPS.length-1,Math.max(0,parseInt(v[0],10)||1));
+        c=Math.min(2,Math.max(0,parseInt(v[1],10)||0)); } }catch(e){}
+  apply();
+  function bind(id,fn){ var b=document.getElementById(id); if(b) b.addEventListener('click',fn); }
+  bind('fontUp',function(){ f=Math.min(STEPS.length-1,f+1); apply(); store(); say('גודל טקסט '+STEPS[f]+' אחוז'); });
+  bind('fontDown',function(){ f=Math.max(0,f-1); apply(); store(); say('גודל טקסט '+STEPS[f]+' אחוז'); });
+  bind('conUp',function(){ c=Math.min(2,c+1); apply(); store(); say('ניגודיות '+CON[c]); });
+  bind('conDown',function(){ c=Math.max(0,c-1); apply(); store(); say('ניגודיות '+CON[c]); });
+  bind('a11yReset',function(){ f=1; c=0; apply(); store(); say('הגדרות התצוגה אופסו'); });
+
+  // mark the section currently in view
+  var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]'));
+  if(!links.length) return;
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var hd=document.querySelector('header'), hh=hd?hd.offsetHeight:0;
+    root.style.setProperty('--hdr',(hh+24)+'px');
+    var line=hh+24, cur=-1;
+    targets.forEach(function(el,i){ if(el && el.getBoundingClientRect().top<=line) cur=i; });
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4) cur=targets.length-1;
+    links.forEach(function(a,i){ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+  }
+  addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
+  addEventListener('resize',update); update();
+})();
+</script>
+</body>
+</html>
