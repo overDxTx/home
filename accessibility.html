@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הצהרת נגישות — החברה למניעת אבחון יתר וטיפול יתר</title>
+<meta name="description" content="הצהרת הנגישות של אתר החברה למניעת אבחון יתר וטיפול יתר, לפי ת&quot;י 5568 ותקנות שוויון זכויות לאנשים עם מוגבלות.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22%23C8102E%22%20stroke-width%3D%229%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M34%2026%20L32%2031%20C30%2048%2033%2050%2039%2052%22%2F%3E%3Cpath%20d%3D%22M51%2026%20L53%2030%20C55%2048%2050%2055%2039%2052%22%2F%3E%3Cpath%20d%3D%22M43%2055%20C42%2074%2050%2086%2060%2069%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2262%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4F3;
+  --surface:#FFFFFF;
+  --ink:#000000;
+  --ink-soft:#000000;
+  --rule:#D2D9D7;
+  --verdigris:#2F6B63;
+  --verdigris-deep:#1F4A45;
+  --signal:#BE8A2A;
+  --measure:66ch;
+  /* Rubik בלבד (SIL Open Font License 1.1). ההיררכיה נשענת על משקל וגודל, לא על ניגוד גופנים */
+  --serif:"Rubik","Segoe UI",Arial,sans-serif;
+  --sans:"Rubik","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;font-weight:400;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.24;letter-spacing:-.018em;margin:0}
+p{margin:0 0 1em}
+a{color:var(--ink);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid #000;outline-offset:2px;box-shadow:0 0 0 6px #F6E9CE}
+.join :focus-visible{outline-color:#fff;box-shadow:0 0 0 6px rgba(0,0,0,.5)}
+[id]{scroll-margin-top:150px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:24px}
+.measure{max-width:var(--measure)}
+
+/* skip link */
+.skip{position:absolute;inset-inline-start:-9999px;top:0;background:var(--surface);padding:10px 16px;z-index:10}
+.skip:focus{inset-inline-start:12px;top:12px}
+
+/* header */
+header{position:sticky;top:0;z-index:5;background:rgba(242,244,243,.93);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.bar{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline;justify-content:space-between;padding-block:14px}
+.mark{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.0312rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.glyph{width:42px;height:42px;flex:none}
+.mark .wordmark span{display:block;font-family:var(--sans);font-size:0.8125rem;font-weight:400;color:var(--ink-soft);letter-spacing:.02em}
+.bar2{display:flex;flex-wrap:wrap;gap:6px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule)}
+.partners{display:flex;align-items:center;gap:10px}
+.partners .logo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--rule);padding:5px 10px}
+.partners .logo:hover{border-color:var(--ink)}
+.partners img{display:block;height:26px;width:auto}
+@media (max-width:860px){.partners{display:none}}
+nav ul{display:flex;flex-wrap:wrap;gap:22px;list-style:none;margin:0;padding:0;font-size:0.9375rem}
+nav a{color:var(--ink);text-decoration:none;padding-block:4px;border-bottom:1px solid transparent}
+nav a:hover{border-bottom-color:var(--signal)}
+
+/* hero */
+.hero{padding-block:72px 56px}
+.hero h1{font-size:clamp(2.0625rem,5.4vw,3.5rem);font-weight:700;letter-spacing:-.03em;max-width:16ch}
+.hero .lede{font-size:clamp(1.125rem,2.1vw,1.3125rem);color:var(--ink-soft);max-width:52ch;margin-top:26px;font-weight:300;line-height:1.65}
+.plate{margin-top:48px;background:var(--surface);border:1px solid var(--rule);padding:28px 26px 20px}
+.plate svg{display:block;width:100%;height:auto}
+.caption{margin:18px 0 0;font-size:0.9062rem;color:var(--ink-soft);max-width:62ch;line-height:1.6}
+.dot{fill:none;stroke:#9BA6A3;stroke-width:1.5}
+.sig{fill:var(--signal);stroke:var(--signal);opacity:0;animation:ink .55s ease-out forwards;animation-delay:var(--d,0s)}
+@keyframes ink{from{opacity:0;transform:scale(.55)}to{opacity:1;transform:scale(1)}}
+.sig{transform-box:fill-box;transform-origin:center}
+
+/* sections */
+section{padding-block:64px;border-top:1px solid var(--rule)}
+section h2{font-size:clamp(1.5625rem,3.2vw,2.0625rem);margin-bottom:10px}
+.sub{color:var(--ink-soft);max-width:var(--measure);margin-bottom:34px}
+
+/* definitions */
+dl{margin:0}
+.def{padding-block:22px;border-top:1px solid var(--rule)}
+.def:first-of-type{border-top:none;padding-top:4px}
+.def dt{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:-.015em}
+.def dt em{font-style:normal;font-family:var(--sans);font-size:0.875rem;font-weight:400;color:var(--ink-soft);margin-inline-start:10px;letter-spacing:.01em}
+.def dd{margin:6px 0 0;max-width:var(--measure);color:var(--ink-soft)}
+
+/* harms */
+.harms{list-style:none;margin:0 0 28px;padding:0;max-width:var(--measure)}
+.harms li{padding-block:12px;border-top:1px solid var(--rule);padding-inline-start:20px;position:relative}
+.harms li::before{content:"";position:absolute;inset-inline-start:0;top:22px;width:9px;height:1px;background:var(--signal)}
+.note{border-inline-start:2px solid var(--verdigris);padding-inline-start:18px;max-width:var(--measure);color:var(--ink);font-size:1.0938rem}
+
+/* tracks */
+.track{padding-block:30px;border-top:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:10px 40px;align-items:start}
+.track:first-of-type{border-top:none}
+.track h3{font-size:1.4375rem}
+.track p{margin:0;color:var(--ink-soft);max-width:56ch}
+.track p + p{margin-top:10px}
+@media (max-width:720px){.track{grid-template-columns:1fr;gap:8px}}
+
+/* join band */
+.join{background:var(--verdigris-deep);color:#EAF1EF;border-top:none}
+.join h2{color:#fff}
+.join p{color:#EAF1EF;max-width:56ch}
+.join a.cta{display:inline-block;margin-top:14px;background:#fff;color:#000;text-decoration:none;padding:13px 26px;font-weight:600;font-size:1rem}
+.join a.cta:hover{background:#F6E9CE}
+.join .small{font-size:0.9375rem;color:#EAF1EF;margin-top:22px}
+.join .small a{color:#fff}
+
+/* resources */
+.res{list-style:none;margin:0;padding:0;max-width:78ch}
+.res li{padding-block:16px;border-top:1px solid var(--rule)}
+.res li:first-child{border-top:none}
+.res a{font-family:var(--serif);font-size:1.125rem;font-weight:500;text-decoration:none;border-bottom:1px solid var(--rule)}
+.res a:hover{border-bottom-color:var(--ink)}
+.res span{display:block;font-size:0.9688rem;color:var(--ink-soft);margin-top:3px}
+
+/* board + contact */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px 48px}
+.cols h3{font-size:1.1875rem;margin-bottom:10px}
+.people{list-style:none;margin:0;padding:0;font-size:1.0312rem}
+.people li{padding-block:5px}
+.people .role{color:var(--ink-soft);font-size:0.9062rem}
+
+footer{border-top:1px solid var(--rule);padding-block:32px 44px;font-size:0.9062rem;color:var(--ink-soft)}
+footer p{margin:0 0 6px}
+.affil{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;padding-bottom:26px;margin-bottom:24px;border-bottom:1px solid var(--rule)}
+.affil .logo{display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--rule);padding:10px 16px}
+.affil .logo:hover{border-color:var(--verdigris)}
+.affil img{display:block;height:40px;width:auto}
+.affil p{max-width:36ch;margin:0;font-size:0.875rem;line-height:1.55}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sig{animation:none;opacity:1}
+}
+</style>
+<style>
+.page-title{padding-block:56px 8px}
+.page-title h1{font-size:clamp(2rem,4.4vw,2.75rem);font-weight:700;letter-spacing:-.025em}
+.page-title p{margin-top:14px;max-width:var(--measure)}
+main section:first-of-type{border-top:none}
+.doc h3{font-size:1.1875rem;margin:26px 0 8px}
+.doc ul{max-width:var(--measure);padding-inline-start:20px}
+.doc li{padding-block:3px}
+.doc p{max-width:var(--measure)}
+.contactbox{background:var(--surface);border:1px solid var(--rule);padding:22px 24px;max-width:var(--measure);margin-top:20px}
+.contactbox p:last-child{margin-bottom:0}
+.fill{background:#F6E9CE;padding:1px 6px}
+
+/* ---- accessibility toolbar + current-section marker ---- */
+.a11ybar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:8px}
+.a11ybar .lbl{font-size:0.8125rem;margin-inline-end:2px}
+.a11ybar button{font-family:inherit;font-size:0.875rem;line-height:1.1;background:var(--surface);color:var(--ink);border:1px solid var(--rule);padding:8px 12px;cursor:pointer}
+.a11ybar button:hover{border-color:var(--ink)}
+.a11ybar .big{font-size:1.0625rem;font-weight:600}
+nav a[aria-current="true"]{font-weight:600;border-bottom:2px solid var(--ink)}
+.affil .logo{background:#fff}
+
+html[data-contrast="1"]{--paper:#FFFFFF;--surface:#FFFFFF;--rule:#4A5451;--ink:#000000;--ink-soft:#000000;--verdigris-deep:#10352F;--signal:#7A5200}
+html[data-contrast="1"] header{background:#FFFFFF}
+html[data-contrast="1"] .dot{stroke:#000}
+
+html[data-contrast="2"]{--paper:#000000;--surface:#000000;--rule:#FFFFFF;--ink:#FFFFFF;--ink-soft:#FFFFFF;--verdigris-deep:#000000;--signal:#FFD400}
+html[data-contrast="2"] header{background:#000000}
+html[data-contrast="2"] a{color:#FFD400}
+html[data-contrast="2"] .glyph g{stroke:#FFFFFF}
+html[data-contrast="2"] .join{border-top:1px solid #FFFFFF}
+html[data-contrast="2"] .join h2,html[data-contrast="2"] .join p,html[data-contrast="2"] .join .small{color:#FFFFFF}
+html[data-contrast="2"] .join a.cta{background:#FFD400;color:#000000}
+html[data-contrast="2"] .join .small a{color:#FFD400}
+html[data-contrast="2"] .harms li::before{background:#FFD400}
+html[data-contrast="2"] .note{border-inline-start-color:#FFD400}
+html[data-contrast="2"] .fill{background:#4A3A00;color:#FFD400}
+html[data-contrast="2"] :focus-visible{outline-color:#FFD400;box-shadow:0 0 0 6px #000000}
+html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 0 0 6px #000000}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">דילוג לתוכן</a>
+
+<header>
+  <div class="wrap bar">
+    <div class="mark">
+      <span class="wordmark">החברה למניעת אבחון יתר וטיפול יתר<span>חברה מדעית בהסתדרות הרפואית בישראל</span></span>
+      <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="40" fill="none" stroke="#C8102E" stroke-width="9"/><g fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"><path d="M34 26 L32 31 C30 48 33 50 39 52"/><path d="M51 26 L53 30 C55 48 50 55 39 52"/><path d="M43 55 C42 74 50 86 60 69"/><circle cx="68" cy="62" r="7"/></g></svg>
+    </div>
+    <div class="partners">
+      <a class="logo" href="https://www.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://associations.ima.org.il/images/footer-hri-logo.png" alt="ההסתדרות הרפואית בישראל"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
+      <a class="logo" href="https://associations.ima.org.il/" target="_blank" rel="noopener noreferrer"><img src="https://ima-associations2.s3.amazonaws.com/4190_24d31727-738e-48f6-84d6-35216298891d.png" alt="האיגודים המדעיים של הר״י"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
+    </div>
+  </div>
+  <div class="wrap bar2">
+    <nav aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="index.html">חזרה לעמוד הראשי</a></li>
+      </ul>
+    </nav>
+    <div class="a11ybar" role="group" aria-label="כלי נגישות">
+      <span class="lbl" id="a11y-text">גודל טקסט</span>
+      <button type="button" class="big" id="fontUp" aria-describedby="a11y-text" aria-label="הגדלת גודל הטקסט">א+</button>
+      <button type="button" class="big" id="fontDown" aria-describedby="a11y-text" aria-label="הקטנת גודל הטקסט">א−</button>
+      <span class="lbl" id="a11y-contrast">ניגודיות</span>
+      <button type="button" id="conUp" aria-describedby="a11y-contrast" aria-label="הגברת הניגודיות">+</button>
+      <button type="button" id="conDown" aria-describedby="a11y-contrast" aria-label="הפחתת הניגודיות">−</button>
+      <button type="button" id="a11yReset">איפוס</button>
+      <span class="sr-only" id="a11yStatus" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="wrap page-title">
+  <h1>הצהרת נגישות</h1>
+  <p>עודכן בתאריך 12.9.2026.</p>
+</div>
+
+<section aria-labelledby="h-commit">
+  <div class="wrap doc">
+    <h2 id="h-commit">המחויבות שלנו</h2>
+    <p>החברה למניעת אבחון יתר וטיפול יתר, חברה מדעית בהסתדרות הרפואית בישראל, רואה חשיבות בכך שהמידע שהיא מפרסמת יהיה זמין לכל אדם, ובכלל זה לאנשים עם מוגבלות. אנחנו פועלים כדי שהאתר יהיה שמיש בעזרת מקלדת בלבד, בעזרת תוכנות הקראת מסך, ובהגדלה של גודל הטקסט.</p>
+    <p>הנגשת האתר בוצעה בהתאם לסימן ג' (נגישות שירותי אינטרנט) שבתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, ועל בסיס התקן הישראלי ת"י 5568, המבוסס על הנחיות <span lang="en">WCAG 2.0</span> ברמה AA.</p>
+    <p>הצהרה זו חלה על אתר החברה בלבד. היא אינה חלה על אתר ההסתדרות הרפואית בישראל, שלו הצהרת נגישות נפרדת משלו, ולא על אתרים חיצוניים אחרים המקושרים מכאן.</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-done">
+  <div class="wrap doc">
+    <h2 id="h-done">ההתאמות שבוצעו</h2>
+    <p>אלה ההתאמות שקיימות באתר בפועל:</p>
+    <h3>ניווט והפעלה</h3>
+    <ul>
+      <li>ניתן להפעיל את כל האתר באמצעות מקלדת בלבד, במקשי Tab ו-Shift+Tab למעבר בין קישורים ובמקש Enter לבחירה.</li>
+      <li>לכל רכיב שניתן למקד יש סימון מיקוד ברור ובעל ניגודיות גבוהה, גם על רקע בהיר וגם על רקע כהה.</li>
+      <li>בראש העמוד קיים קישור "דילוג לתוכן", המאפשר לדלג על התפריט.</li>
+      <li>קישורים הנפתחים בחלון או בכרטיסייה חדשה מכריזים על כך בפני תוכנות הקראת מסך.</li>
+      <li>בתפריט העליון מסומן הסעיף שבו נמצא הקורא כרגע, בהדגשה ובקו תחתון — ולא בצבע בלבד.</li>
+    </ul>
+    <h3>מבנה ותוכן</h3>
+    <ul>
+      <li>מבנה כותרות היררכי ותקין, ואזורי תוכן בעלי שם, כדי לאפשר ניווט מהיר בתוכנת הקראה.</li>
+      <li>טקסט חלופי לתמונות, וסימון גרפיקה נלווית כך שלא תוקרא לשווא.</li>
+      <li>לתמונה שבעמוד הראשי יש טקסט חלופי מלא וכיתוב מילולי, ומצוין בכיתוב שהיא נוצרה באמצעות בינה מלאכותית.</li>
+      <li>מונחים ושמות באנגלית בתוך טקסט עברי מסומנים בשפתם, כדי שיוקראו בהגייה נכונה.</li>
+    </ul>
+    <h3>תצוגה</h3>
+    <ul>
+      <li>ניגודיות הצבעים בין הטקסט לרקע עומדת בדרישות התקן, ובחלק גדול מהעמוד עולה עליהן בהרבה.</li>
+      <li>גודל הטקסט מוגדר ביחידות יחסיות, כך שהוא גדל יחד עם הגדרת גודל הגופן שבדפדפן ובהגדלת תצוגה.</li>
+      <li>האתר מותאם לגלישה בטלפון נייד ובטאבלט.</li>
+      <li>בראש כל עמוד קיים סרגל נגישות המאפשר להגדיל ולהקטין את גודל הטקסט (בין 87.5% ל-150%), ולבחור בין שלוש רמות ניגודיות: רגילה, גבוהה, ומרבית (טקסט לבן על רקע שחור). ההעדפה נשמרת במכשיר ונטענת מחדש בכניסה הבאה. כפתור "איפוס" מחזיר את תצוגת ברירת המחדל.</li>
+      <li>אין באתר תנועה, הבהוב או תוכן מתחלף אוטומטית. גלילה חלקה מושבתת עבור מי שהגדיר במערכת ההפעלה העדפה לצמצום תנועה.</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="h-tested">
+  <div class="wrap doc">
+    <h2 id="h-tested">בדיקות שבוצעו</h2>
+    <p>הנגישות נבדקה בדפדפנים <span class="fill">[להשלים: רשימת הדפדפנים והגרסאות]</span>, במערכות הפעלה <span class="fill">[להשלים]</span>, ובתוכנות הקראת מסך <span class="fill">[להשלים: לדוגמה NVDA, VoiceOver]</span>. הבדיקה האחרונה בוצעה בתאריך <span class="fill">[להשלים]</span>.</p>
+    <p>אנחנו בודקים את נגישות האתר מחדש בכל שינוי מהותי בתוכן או במבנה, ולפחות אחת לשנה.</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-limits">
+  <div class="wrap doc">
+    <h2 id="h-limits">מגבלות ידועות</h2>
+    <ul>
+      <li>האתר מקשר לאתרים חיצוניים — ההסתדרות הרפואית בישראל, כתבי עת וארגונים בין-לאומיים. רמת הנגישות של אתרים אלה אינה בשליטתנו ואינה באחריותנו.</li>
+      <li>מסמכים שיפורסמו באתר בעתיד, כגון קובצי PDF של ניירות עמדה או מערכי שיעור, עשויים שלא להיות נגישים במלואם. אם נתקלתם במסמך כזה ואתם זקוקים לו, פנו אלינו ונספק את תוכנו בפורמט נגיש.</li>
+    </ul>
+    <p>אם מצאתם רכיב שאינו נגיש ואינו מופיע כאן, נשמח לדעת עליו. נטפל בפנייה ונעדכן את ההצהרה בהתאם.</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-coord">
+  <div class="wrap doc">
+    <h2 id="h-coord">רכז הנגישות ופנייה בנושאי נגישות</h2>
+    <p>רכז הנגישות של האתר, באופן זמני עד למינוי קבוע מטעם ועד החברה:</p>
+    <div class="contactbox">
+      <p><strong>ד"ר ניר צבר</strong>, רכז נגישות (זמני)</p>
+      <p>דוא"ל: <span class="fill">[להשלים: כתובת דוא"ל לפרסום]</span></p>
+      <p>טלפון: <span class="fill">[להשלים]</span></p>
+    </div>
+    <p style="margin-top:22px">כדי שנוכל לטפל בפנייה ביעילות, נשמח אם תציינו:</p>
+    <ul>
+      <li>את הכתובת של העמוד שבו נתקלתם בבעיה.</li>
+      <li>את מערכת ההפעלה והדפדפן שבהם השתמשתם, כולל גרסאות.</li>
+      <li>טכנולוגיה מסייעת שבה השתמשתם, אם השתמשתם.</li>
+      <li>תיאור קצר של הפעולה שניסיתם לבצע ושל מה שקרה בפועל.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>החברה למניעת אבחון יתר וטיפול יתר — חברה מדעית בהסתדרות הרפואית בישראל.</p>
+    <p><a href="index.html">חזרה לעמוד הראשי</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, S=document.getElementById('a11yStatus');
+  var STEPS=[87.5,100,112.5,125,137.5,150], CON=['רגילה','גבוהה','מרבית'];
+  var f=1, c=0;
+  function store(){ try{ localStorage.setItem('a11y',f+','+c); }catch(e){} }
+  function say(t){ if(S) S.textContent=t; }
+  function apply(){
+    root.style.fontSize=STEPS[f]+'%';
+    if(c===0) root.removeAttribute('data-contrast'); else root.setAttribute('data-contrast',c);
+  }
+  try{ var v=(localStorage.getItem('a11y')||'').split(','); if(v.length===2){
+        f=Math.min(STEPS.length-1,Math.max(0,parseInt(v[0],10)||1));
+        c=Math.min(2,Math.max(0,parseInt(v[1],10)||0)); } }catch(e){}
+  apply();
+  function bind(id,fn){ var b=document.getElementById(id); if(b) b.addEventListener('click',fn); }
+  bind('fontUp',function(){ f=Math.min(STEPS.length-1,f+1); apply(); store(); say('גודל טקסט '+STEPS[f]+' אחוז'); });
+  bind('fontDown',function(){ f=Math.max(0,f-1); apply(); store(); say('גודל טקסט '+STEPS[f]+' אחוז'); });
+  bind('conUp',function(){ c=Math.min(2,c+1); apply(); store(); say('ניגודיות '+CON[c]); });
+  bind('conDown',function(){ c=Math.max(0,c-1); apply(); store(); say('ניגודיות '+CON[c]); });
+  bind('a11yReset',function(){ f=1; c=0; apply(); store(); say('הגדרות התצוגה אופסו'); });
+
+  // mark the section currently in view
+  var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]'));
+  if(!links.length) return;
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var line=(document.querySelector('header')||{offsetHeight:0}).offsetHeight+24, cur=-1;
+    targets.forEach(function(el,i){ if(el && el.getBoundingClientRect().top<=line) cur=i; });
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4) cur=targets.length-1;
+    links.forEach(function(a,i){ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+  }
+  addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
+  addEventListener('resize',update); update();
+})();
+</script>
+</body>
+</html>
