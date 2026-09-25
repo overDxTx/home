@@ -52,10 +52,11 @@ a:hover{text-decoration-thickness:2px}
 
 /* header */
 header{position:sticky;top:0;z-index:5;background:rgba(242,244,243,.93);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
-.bar{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline;justify-content:space-between;padding-block:14px}
-.mark{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.0312rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
-.glyph{width:42px;height:42px;flex:none}
-.mark .wordmark span{display:block;font-family:var(--sans);font-size:0.8125rem;font-weight:400;color:var(--ink-soft);letter-spacing:.02em}
+header2{z-index:4}
+.bar{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:top;justify-content:space-between;padding-block:14px}
+.mark{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.glyph{width:84px;height:84px;flex:none}
+.mark .wordmark span{display:block;font-family:var(--sans);font-size:1.5rem;font-weight:400;color:var(--ink-soft);letter-spacing:.02em}
 .bar2{display:flex;flex-wrap:wrap;gap:6px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--rule)}
 .partners{display:flex;align-items:center;gap:10px}
 .partners .logo{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--rule);padding:5px 10px}
@@ -72,20 +73,139 @@ nav a{color:var(--ink);text-decoration:none;padding-block:4px;border-bottom:1px 
 nav a:hover{border-bottom-color:var(--signal)}
 
 /* hero */
-.hero{padding-block:64px 52px}
-.hero-text{max-width:var(--measure)}
+.hero {
+  padding-top: 64px;
+  padding-bottom: 52px;
+}
+
+/* Clearfix fallback for older browsers using float layouts */
+.hero::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hero-text {
+  max-width: var(--measure);
+}
+
+/* Mobile-First Typography with fallbacks for browsers that don't support clamp() */
+.hero h1 {
+  font-size: 2.25rem; 
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  max-width: 16ch;
+}
+
+.hero .lede {
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.8vw, 1.25rem);
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin-top: 26px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.plate {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.credit {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8125rem;
+}
+
+.caption {
+  margin: 10px 0 0;
+  font-size: 0.9062rem;
+  color: var(--ink-soft);
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+/* Desktop Styles (1000px and up) */
+@media (min-width: 1000px) {
+  /* Legacy layout fallback: Float columns if Grid isn't supported */
+  .hero-text {
+    float: left;
+    width: 45%;
+  }
+  .plate {
+    float: right;
+    width: 50%;
+  }
+
+  /* Modern Grid Layout (Overrides floats in modern browsers automatically) */
+  @supports (display: grid) {
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 52px;
+      align-items: center;
+    }
+    .hero-text, .plate {
+      float: none;
+      width: auto;
+    }
+  }
+  
+  /* Desktop Typography Scaling (Larger sizes) */
+  .hero h1 {
+    font-size: 3rem;
+    font-size: clamp(2.0625rem, 5.4vw, 3.5rem); 
+    margin-bottom: 0;
+  }
+  
+  .hero .lede {
+    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 2.1vw, 1.3125rem);
+    margin-top: 22px; 
+  }
+  
+  .plate {
+    margin-top: 0;
+    border-left: 1px solid var(--rule);
+    padding-left: 22px;
+    padding-right: 0;
+  }
+}
+
+/* logo1 */
+.logo1{padding-block:64px 52px; width:25%}
+.logo1-text{max-width:var(--measure)}
 @media (min-width:1000px){
   .plate{margin-top:0;border-inline-start:1px solid var(--rule);padding-inline:22px 0}
-  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:52px;align-items:center}
-  .hero h1{font-size:clamp(2rem,3.4vw,2.75rem)}
-  .hero .lede{margin-top:22px}
+  .logo1{max-width: 25%}
+  .logo1 h1{font-size:clamp(2rem,3.4vw,2.75rem)}
+  .logo1 .lede{margin-top:22px}
 }
-.hero h1{font-size:clamp(2.0625rem,5.4vw,3.5rem);font-weight:700;letter-spacing:-.03em;max-width:16ch}
-.hero .lede{font-size:clamp(1.125rem,2.1vw,1.3125rem);color:var(--ink-soft);max-width:52ch;margin-top:26px;font-weight:300;line-height:1.65}
-.plate{margin-top:44px;background:none;border:none;padding:0}
-.plate img{display:block;width:100%;height:auto}
+.logo1 h1{font-size:clamp(2.0625rem,5.4vw,3.5rem);font-weight:700;letter-spacing:-.03em;max-width:16ch}
+.logo1 .lede{font-size:clamp(1.125rem,2.1vw,1.3125rem);color:var(--ink-soft);max-width:40%; height:auto;margin-top:26px;font-weight:300;line-height:1.65}
+.plate{background:none;border:none;padding:0}
+.plate img{display:block}
 .credit{display:block;margin-top:6px;font-size:0.8125rem}
 .caption{margin:10px 0 0;font-size:0.9062rem;color:var(--ink-soft);max-width:62ch;line-height:1.6}
+
+
+.logo2 img {
+  height: 8vw;              /* Exactly X% of the container's width */
+  width: auto;                /* Allows width to adjust to the new height */
+  object-fit: contain;        /* Keeps the image from distorting */
+  margin:0;
+}
 
 /* sections */
 section{padding-block:64px;border-top:1px solid var(--rule)}
@@ -127,7 +247,7 @@ dl{margin:0}
 .res{list-style:none;margin:0;padding:0;max-width:78ch}
 .res li{padding-block:16px;border-top:1px solid var(--rule)}
 .res li:first-child{border-top:none}
-.res a{font-family:var(--serif);font-size:1.125rem;font-weight:500;text-decoration:none;border-bottom:1px solid var(--rule)}
+.res a:not(figure a){font-family:var(--serif);font-size:1.125rem;font-weight:500;text-decoration:none;border-bottom:1px solid var(--rule)}
 .res a:hover{border-bottom-color:var(--ink)}
 .res span{display:block;font-size:0.9688rem;color:var(--ink-soft);margin-top:3px}
 
@@ -234,20 +354,27 @@ html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 
     <h1>רפואה טובה יודעת גם מתי לא להגזים</h1>
   <p class="lede">ככל שהיכולת שלנו לגלות משתפרת, אנחנו מוצאים יותר. אבל לא כל ממצא הוא מחלה שכדאי לנסות לאבחן ולרפא. החברה למניעת אבחון יתר וטיפול יתר פועלת כדי שהשיקול הזה יהיה חלק מהשגרה הקלינית, מההכשרה הרפואית ומהשיחה עם המטופלים.</p>
   </div>
-
-  <figure class="plate">
-    <img src="overdiagnosis-hero.jpg" width="1024" height="559" alt="רופא עומד ליד מיטת אשפוז במחלקה פנימית ומעיין בדף תוצאות. המטופל שוכב במיטה כשהוא כמעט מכוסה כולו בערימות עצומות של תדפיסי בדיקות, תיקים רפואיים ומסכים שמציגים תוצאות ודרישות לבדיקות נוספות.">
-    <figcaption class="caption">כשכל ממצא גורר בדיקה נוספת, המטופל נעלם מתחת לתוצאות.<span class="credit">התמונה נוצרה באמצעות <span lang="en" dir="ltr">Google Gemini</span></span></figcaption>
-  </figure>
+  <div>
+    <figure class="plate">
+      <img src="overDxTxLogo1.jpg" width="256" height="140" alt="כתובות בערבוביה ובצבעים שונים באנגלית, לדוגמא Too-much-medicine, slow, Less-is-More, Choosing-Wisely">
+    </figure>
+    <figure class="plate">
+      <figcaption class="caption">כשכל ממצא גורר בדיקה נוספת, המטופל נעלם מתחת לתוצאות.</figcaption>
+      <img src="overdiagnosis-hero.jpg" width="1024" height="559" alt="רופא עומד ליד מיטת אשפוז במחלקה פנימית ומעיין בדף תוצאות. המטופל שוכב במיטה כשהוא כמעט מכוסה כולו בערימות עצומות של תדפיסי בדיקות, תיקים רפואיים ומסכים שמציגים תוצאות ודרישות לבדיקות נוספות.">
+      <figcaption><span class="credit">(תמונה להמחשה, נוצרה באמצעות <bdi lang="en">Google Gemini</bdi>)</span></figcaption>
+    </figure>
+  </div>
 </div>
 
 <section id="what" aria-labelledby="h-what">
   <div class="wrap">
-    <h2 id="h-what">מה זה בעצם</h2>
-    <figure class="plate">
-      <img src="overDxTxLogo1.jpg" width="256" height="140" alt="כתובות בערבוביה ובצבעים שונים באנגלית, לדוגמא Too-much-medicine, slow, Less-is-More, Choosing-Wisely">
-    </figure>
-    <p class="sub">שלושה מושגים שחוזרים בכל דיון בתחום, ושכדאי להבחין ביניהם.</p>
+    <header2 class="partners header2">
+      <h2 id="h-what">מה זה בעצם</h2>
+      <figure class="plate logo1">
+        <img src="rentgen_Photo_by_martinvorel.jpg" width="256" height="140" alt="תמונת יד מצביעה על צילום רנטגן של מרפק ולידו ערמת תרופות">
+      </figure>
+    </header2>
+    <p class="sub">שלושה מושגים שחוזרים בדיונים בתחום, ושכדאי להבחין ביניהם:</p>
     <dl>
       <div class="def">
         <dt>אבחון יתר <em>(<span lang="en">Overdiagnosis</span>)</em></dt>
@@ -324,29 +451,54 @@ html[data-contrast="2"] .join :focus-visible{outline-color:#FFD400;box-shadow:0 
     <h2 id="h-res">מקורות וקריאה נוספת</h2>
     <p class="sub">חומרים בעברית ובאנגלית, למי שרוצה להעמיק או ללמד.</p>
     <ul class="res">
-      <li>
-        <a href="https://www.ima.org.il/MedicineQuality/ChoosingWisely.aspx" target="_blank" rel="noopener noreferrer">בוחרים בתבונה — הר"י<span class="sr-only"> (נפתח בחלון חדש)</span></a>
-        <span>ההמלצות הישראליות של האיגודים המדעיים, לרופאים ולמטופלים.</span>
+      <li class="bar">
+        <div>
+          <a href="https://www.ima.org.il/MedicineQuality/ChoosingWisely.aspx" target="_blank" rel="noopener noreferrer">בוחרים בתבונה — הר"י<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          <span>ההמלצות הישראליות של האיגודים המדעיים, לרופאים ולמטופלים.</span>
+        </div>
+        <figure class="plate logo2">
+          <a href="https://www.ima.org.il/MedicineQuality/ChoosingWisely.aspx" target="_blank">
+            <img src="HebChoosingWiselyLogo.jpg" alt="לוגו של יוזמת בוחרים בתבונה, עם הכיתוב בעברית">
+          </a>
+        </figure>
       </li>
-      <li>
-        <a href="https://www.wikirefua.org.il/w/index.php?title=%D7%9E%D7%A0%D7%99%D7%A2%D7%AA_%D7%90%D7%91%D7%97%D7%95%D7%9F_%D7%99%D7%AA%D7%A8_%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%9C_%D7%99%D7%AA%D7%A8_-_%D7%A0%D7%99%D7%99%D7%A8_%D7%A2%D7%9E%D7%93%D7%94" target="_blank" rel="noopener noreferrer">נייר עמדה: מניעת אבחון יתר וטיפול יתר<span class="sr-only"> (נפתח בחלון חדש)</span></a>
-        <span>מסמך לצוותים הכותבים הנחיות קליניות וניירות עמדה מטעם איגודי הר"י.</span>
+      <li class="bar">
+        <div>
+          <a href="https://www.wikirefua.org.il/w/index.php?title=%D7%9E%D7%A0%D7%99%D7%A2%D7%AA_%D7%90%D7%91%D7%97%D7%95%D7%9F_%D7%99%D7%AA%D7%A8_%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%9C_%D7%99%D7%AA%D7%A8_-_%D7%A0%D7%99%D7%99%D7%A8_%D7%A2%D7%9E%D7%93%D7%94" target="_blank" rel="noopener noreferrer">נייר עמדה: מניעת אבחון יתר וטיפול יתר<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          <span>מסמך לצוותים הכותבים הנחיות קליניות וניירות עמדה מטעם איגודי הר"י.</span>
+        </div>
+        <figure class="plate logo2">
+          <a href="https://www.wikirefua.org.il/w/index.php?title=%D7%9E%D7%A0%D7%99%D7%A2%D7%AA_%D7%90%D7%91%D7%97%D7%95%D7%9F_%D7%99%D7%AA%D7%A8_%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%9C_%D7%99%D7%AA%D7%A8_-_%D7%A0%D7%99%D7%99%D7%A8_%D7%A2%D7%9E%D7%93%D7%94" target="_blank">
+            <img src="WikiDecleration.jpg" alt="כיתוב בעברית: ויקירפואה נייר עמדה">
+          </a>
+        </figure>
       </li>
-      <li>
-        <a href="https://www.choosingwisely.org" target="_blank" rel="noopener noreferrer" lang="en">Choosing Wisely<span class="sr-only"> (נפתח בחלון חדש)</span></a>
-        <span>היוזמה האמריקאית שהחלה ב-2012, ומאות המלצות של איגודי התמחות.</span>
+      <li class="bar">
+        <div>
+          <a href="https://www.choosingwisely.org" target="_blank" rel="noopener noreferrer" lang="en">Choosing Wisely<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          <span>היוזמה האמריקאית שהחלה ב-2012, ומאות המלצות של איגודי התמחות.</span>
+        </div>
+        <figure class="plate logo2">
+          <a href="https://www.choosingwisely.org" target="_blank">
+            <img src="ChoosingWiselyLogo.jpg" alt="לוגו של יוזמת Choosing Wisely, עם הכיתוב באנגלית">
+          </a>
+        </figure>
       </li>
-      <li>
+      <li class="bar">
+      <div>
         <a href="https://www.bmj.com/too-much-medicine" target="_blank" rel="noopener noreferrer" lang="en">Too Much Medicine — BMJ<span class="sr-only"> (נפתח בחלון חדש)</span></a>
-        <span>אוסף מאמרים וקמפיין מתמשך של ה-<span lang="en">BMJ</span> בנושא רפואה עודפת.</span>
+        <span>אוסף מאמרים קמפיין מתמשך של ה-<bdi lang="en">BMJ</bdi> בנושא רפואה עודפת.</span>
+      </div>
       </li>
       <li>
         <a href="https://jamanetwork.com/collections/44045/less-is-more" target="_blank" rel="noopener noreferrer" lang="en">Less is More — JAMA<span class="sr-only"> (נפתח בחלון חדש)</span></a>
         <span>סדרת מאמרים על מצבים שבהם פחות רפואה מיטיבה יותר.</span>
       </li>
-      <li>
+      <li class="bar">
+        <div>
         <a href="https://www.cebm.ox.ac.uk/preventing-overdiagnosis" target="_blank" rel="noopener noreferrer" lang="en">Preventing Overdiagnosis<span class="sr-only"> (נפתח בחלון חדש)</span></a>
-        <span>הכנס המדעי הבינלאומי בתחום, בשיתוף מרכז ה-<span lang="en">CEBM</span> באוניברסיטת אוקספורד.</span>
+        <span>הכנס המדעי הבינלאומי בתחום, בשיתוף מרכז ה-<bdi lang="en">CEBM</bdi> באוניברסיטת אוקספורד.</span>
+        </div>
       </li>
     </ul>
   </div>
