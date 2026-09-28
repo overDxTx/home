@@ -152,6 +152,7 @@
 
     .bar {
       display: flex;
+      height: fit-content;
       flex-wrap: wrap;
       gap: 2%;
       align-items: flex-start;
@@ -181,7 +182,7 @@
       font-weight: 600;
       letter-spacing: -0.02em;
       line-height: 1.3;
-      height: 5rem;
+      /* height: 5rem; */
     }
 
     .glyph {
@@ -200,16 +201,25 @@
 
     .partners {
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
+      flex-grow: 1;
+      align-items: center;
+      /* Replaces invalid 'flex' */
+      gap: 0.75rem;
     }
 
     .partners .logo {
+      box-sizing: border-box;
+      height: 4rem;
+      /* ~52px total box height */
       display: inline-flex;
       align-items: center;
       background: var(--surface);
       border: 1px solid var(--rule);
-      padding: 5px 10px;
+      padding: 0.35rem 0.65rem;
+    }
+
+    .right-logo {
+      margin-left: auto;
     }
 
     .partners .logo:hover {
@@ -218,22 +228,19 @@
 
     .partners img {
       display: block;
-      height: 52px;
+      height: 100%;
       width: auto;
+      object-fit: contain;
+      /* Preserves aspect ratio */
     }
 
     @media (max-width: 860px) {
-      .partners .logo:last-child {
-        display: none;
-      }
 
       .partners .logo {
         padding: 4px 6px;
       }
 
       .partners img {
-        height: 34px;
-        width: 23px;
         object-position: right center;
       }
     }
@@ -838,28 +845,27 @@
     <div class="wrap bar">
       <div class="mark">
         <span class="wordmark">החברה למניעת אבחון יתר וטיפול יתר<span>חברה מדעית בהסתדרות הרפואית בישראל</span></span>
-          <svg class="glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 720"
-            width="100%" height="100%" overflow="hidden">
-            <g>
-              <rect x="0" y="0" fill="#FFF" />
-              <path d="M2 355C2 164 162 10 360 10 558 10 718 164 718 355 718 546 558 700 360 700 162 700 2 546 2 355Z"
-                fill="#F00" fill-rule="evenodd" />
-              <path
-                d="M81 357C81 205 205 83 359 83 512 83 636 205 636 357 636 508 512 630 359 630 205 630 81 508 81 357Z"
-                fill="#FFF" fill-rule="evenodd" />
-              <path
-                d="M539 298C539 269 516 246 488 246 459 246 436 269 436 298 436 323 455 345 480 349L480 473C480 519 441 591 394 591 347 591 310 519 310 473L307 303C352 301 395 279 395 229 395 227 396 220 394 219L395 169C395 155 383 144 369 144L366 144 366 143C364 139 361 136 357 136L354 136C346 136 341 142 341 149 341 156 346 162 354 162L357 162C361 162 364 159 366 156L366 154 369 154C378 154 385 161 385 169 385 186 385 203 385 220 383 221 383 226 383 228 389 276 329 294 302 294 275 294 222 271 222 227 222 225 221 223 219 222 220 204 220 187 220 169 220 161 227 154 235 154L239 154 239 156C240 159 244 162 248 162L251 162C258 162 264 156 264 149 264 142 258 136 251 136L248 136C244 136 240 139 239 143L239 144 235 144C221 144 210 155 210 169 210 186 210 203 210 220 208 222 208 226 208 228 208 277 274 303 293 303 294 359 294 416 295 473 295 528 338 605 394 605 449 605 495 528 495 473L495 349C520 345 539 323 539 298ZM490 339C488 338 487 338 485 339 462 338 445 318 446 295 448 273 467 255 490 257 513 258 530 277 529 300 527 321 511 338 490 339Z"
-                fill="#F00" fill-rule="evenodd" />
-              <path
-                d="M488 270C472 270 459 283 459 298 459 313 472 326 488 326 503 326 516 313 516 298 516 283 503 270 488 270ZM488 316C477 316 469 308 469 298 469 288 477 280 488 280 498 280 506 288 506 298 506 308 498 316 488 316Z"
-                fill-rule="evenodd" />
-              <path
-                d="M453 298C453 279 468 264 488 264 507 264 523 279 523 298 523 317 507 333 488 333 468 333 453 317 453 298Z"
-                stroke="#F2F2F2" stroke-width="13" stroke-miterlimit="8" fill="none" fill-rule="evenodd" />
-            </g>
-          </svg>
       </div>
       <div class="partners">
+        <svg class="glyph right-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 720 720" width="100%" height="100%" overflow="hidden">
+          <g>
+            <rect x="0" y="0" fill="#FFF"></rect>
+            <path d="M2 355C2 164 162 10 360 10 558 10 718 164 718 355 718 546 558 700 360 700 162 700 2 546 2 355Z"
+              fill="#F00" fill-rule="evenodd"></path>
+            <path d="M81 357C81 205 205 83 359 83 512 83 636 205 636 357 636 508 512 630 359 630 205 630 81 508 81 357Z"
+              fill="#FFF" fill-rule="evenodd"></path>
+            <path
+              d="M539 298C539 269 516 246 488 246 459 246 436 269 436 298 436 323 455 345 480 349L480 473C480 519 441 591 394 591 347 591 310 519 310 473L307 303C352 301 395 279 395 229 395 227 396 220 394 219L395 169C395 155 383 144 369 144L366 144 366 143C364 139 361 136 357 136L354 136C346 136 341 142 341 149 341 156 346 162 354 162L357 162C361 162 364 159 366 156L366 154 369 154C378 154 385 161 385 169 385 186 385 203 385 220 383 221 383 226 383 228 389 276 329 294 302 294 275 294 222 271 222 227 222 225 221 223 219 222 220 204 220 187 220 169 220 161 227 154 235 154L239 154 239 156C240 159 244 162 248 162L251 162C258 162 264 156 264 149 264 142 258 136 251 136L248 136C244 136 240 139 239 143L239 144 235 144C221 144 210 155 210 169 210 186 210 203 210 220 208 222 208 226 208 228 208 277 274 303 293 303 294 359 294 416 295 473 295 528 338 605 394 605 449 605 495 528 495 473L495 349C520 345 539 323 539 298ZM490 339C488 338 487 338 485 339 462 338 445 318 446 295 448 273 467 255 490 257 513 258 530 277 529 300 527 321 511 338 490 339Z"
+              fill="#F00" fill-rule="evenodd"></path>
+            <path
+              d="M488 270C472 270 459 283 459 298 459 313 472 326 488 326 503 326 516 313 516 298 516 283 503 270 488 270ZM488 316C477 316 469 308 469 298 469 288 477 280 488 280 498 280 506 288 506 298 506 308 498 316 488 316Z"
+              fill-rule="evenodd"></path>
+            <path
+              d="M453 298C453 279 468 264 488 264 507 264 523 279 523 298 523 317 507 333 488 333 468 333 453 317 453 298Z"
+              stroke="#F2F2F2" stroke-width="13" stroke-miterlimit="8" fill="none" fill-rule="evenodd"></path>
+          </g>
+        </svg>
         <a class="logo" href="https://www.ima.org.il/" target="_blank" rel="noopener noreferrer"><img
             src="footer-hri-logo.jpg" alt="ההסתדרות הרפואית בישראל"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
         <a class="logo" href="https://associations.ima.org.il/" target="_blank" rel="noopener noreferrer"><img
@@ -880,16 +886,16 @@
         </ul>
       </nav>
       <div class="accesswrap">
-        <button type="button" id="accessOpen" class="accessicon" aria-expanded="true" aria-controls="accessbar"
-          aria-label="פתיחת סרגל נגישות" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
-            fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="4.3" r="1.9" fill="currentColor" stroke="none" />
-            <path d="M4.6 9h14.8" />
-            <path d="M12 8.4v4" />
-            <path d="M12 12.4l-3.1 11" />
-            <path d="M12 12.4l3.1 11" />
+        <button type="button" id="accessOpen" class="accessicon" aria-expanded="false" aria-controls="accessbar"
+          aria-label="פתיחת סרגל נגישות"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+            stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="4.3" r="1.9" fill="currentColor" stroke="none"></circle>
+            <path d="M4.6 9h14.8"></path>
+            <path d="M12 8.4v4"></path>
+            <path d="M12 12.4l-3.1 11"></path>
+            <path d="M12 12.4l3.1 11"></path>
           </svg></button>
-        <div class="accessbar" id="accessbar" role="group" aria-label="כלי נגישות">
+        <div class="accessbar" id="accessbar" role="group" aria-label="כלי נגישות" hidden="">
           <span class="lbl" id="access-text">גודל טקסט</span>
           <button type="button" class="big" id="fontUp" aria-describedby="access-text"
             aria-label="הגדלת גודל הטקסט">א+</button>
