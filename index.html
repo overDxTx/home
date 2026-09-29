@@ -104,9 +104,15 @@
     }
 
     .wrap {
-      max-width: 1040px;
+      /*max-width: 1040px;*/
       margin-inline: auto;
-      padding-inline: 24px;
+      padding-inline: 1rem;
+
+      container-type: inline-size;
+      max-width: 80rem;
+      /* Adjust based on your preferred maximum spread */
+      margin-inline: auto;
+
     }
 
     .sr-only {
@@ -139,15 +145,12 @@
     /* Header & Navigation */
     header {
       position: sticky;
+      text-align: center;
       top: 0;
       z-index: 5;
       background: rgba(242, 244, 243, 0.93);
       backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--rule);
-    }
-
-    header2 {
-      z-index: 4;
     }
 
     .bar {
@@ -163,7 +166,7 @@
     .bar2 {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 20px;
+      gap: 0.5rem;
       align-items: center;
       justify-content: space-between;
       border-top: 1px solid var(--rule);
@@ -246,17 +249,26 @@
     }
 
     nav {
-      max-width: 80%;
+      /*max-width: 94%;*/
+      flex-grow: 1;
+      flex-shrink: 10;
+      flex-basis: 80%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 0.6rem;
+      direction: rtl;
+      /* תמיכה מלאה בעברית */
     }
 
     nav ul {
       display: flex;
       flex-wrap: wrap;
-      gap: 22px;
+      justify-content: space-between;
+      gap: 0.8rem;
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 0.9375rem;
+      font-size: 0.8rem;
     }
 
     nav a {
@@ -264,15 +276,58 @@
       text-decoration: none;
       padding-block: 4px;
       border-bottom: 1px solid transparent;
+      text-decoration: none;
+      color: #4a5568;
+      font-family: system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 1rem;
+      border-radius: 1rem;
+      /* יוצר מראה של קפסולה */
+      transition: all 0.25s ease;
     }
 
     nav a:hover {
       border-bottom-color: var(--signal);
+      background-color: #e2e8f0;
+      color: #1a202c;
     }
 
     nav a[aria-current="true"] {
       font-weight: 600;
       border-bottom: 2px solid var(--ink);
+    }
+
+    @media (max-width: 932px) {
+      nav a {
+        padding-block: 3px;
+        border-bottom: 1px solid transparent;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.4rem;
+        border-radius: 0.8rem;
+      }
+
+      .mark {
+
+        gap: 5px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        /* height: 5rem; */
+      }
+
+      .glyph {
+        width: 70px;
+        height: 70px;
+        flex: none;
+      }
+
+      .mark .wordmark span {
+        font-size: 1rem;
+
+      }
     }
 
     /* Hero */
@@ -305,7 +360,7 @@
     .plate {
       border-radius: 15px;
       overflow: hidden;
-      margin-inline: 18px
+      margin-inline: 0.7rem;
     }
 
     .plate img {
@@ -323,7 +378,7 @@
 
     .caption {
       margin: 10px 0 0;
-      font-size: 0.9062rem;
+      font-size: 0.9rem;
       color: var(--ink-soft);
       max-width: 62ch;
       line-height: 1.6;
@@ -392,8 +447,9 @@
       border-top: 1px solid var(--rule);
       display: grid;
       grid-template-columns: 30% 2fr 3fr;
-      gap: 10px 40px;
-      grid-auto-flow: column;
+      gap: 1rem;
+      grid-auto-flow: row;
+      grid-auto-rows: auto;
     }
 
     .def:first-of-type {
@@ -423,13 +479,65 @@
     }
 
     .def img {
-      max-height: 25vw;
+      max-height: 50vw;
       /* Limits the maximum height */
       width: 100%;
       /* Keeps the correct aspect ratio */
       height: auto;
       /* Allows natural scaling */
     }
+
+    /*****/
+    .def {
+      display: grid;
+      /* Default: 1 row with 3 equally stretched columns */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    /* Forces the items (and the image inside <figure>) to stretch fully */
+    .def>dt,
+    .def>dd,
+    .def>figure {
+      margin: 0;
+      /* Clears default browser margins for dd and figure */
+      width: 100%;
+    }
+
+    .def img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Prevents the image from stretching out of proportion */
+    }
+
+    /* Breakpoint 1: Below 38rem -> 2 rows (Title/Subtitle on top, Image wide below) */
+    @container (max-width: 45em) {
+      .def {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Selects the 3rd item (figure) and stretches it across both columns */
+      .def> :nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+
+    /* Breakpoint 2: Below 19rem -> 3 stacked rows */
+    @container (max-width: 25em) {
+      .def {
+        grid-template-columns: 1fr;
+      }
+
+      /* Resets the 3rd item to a single column width for the 1-column layout*/
+      .def> :nth-child(3) {
+        grid-column: span 1;
+      }
+    }
+
+    /*****/
 
     /* Harms */
     .harms {
@@ -600,7 +708,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 1.0312rem;
+      font-size: 1rem;
     }
 
     .people li {
@@ -609,14 +717,14 @@
 
     .people .role {
       color: var(--ink-soft);
-      font-size: 0.9062rem;
+      font-size: 0.9rem;
     }
 
     /* Footer */
     footer {
       border-top: 1px solid var(--rule);
       padding-block: 32px 44px;
-      font-size: 0.9062rem;
+      font-size: 0.9rem;
       color: var(--ink-soft);
     }
 
@@ -922,7 +1030,7 @@
           המטופלים.</p>
       </div>
       <div>
-        <figure class="plate">
+        <figure class="plate" style="max-height: 500px;">
           <img src="overDxTxLogo1.jpg"
             alt="כתובות בערבוביה ובצבעים שונים באנגלית, לדוגמא Too-much-medicine, slow, Less-is-More, Choosing-Wisely">
         </figure>
@@ -939,7 +1047,7 @@
             <dd>
               <p class="sub">שלושה מושגים שחוזרים בדיונים בתחום, ושכדאי להבחין ביניהם:</p>
             </dd>
-            <figure class="plate">
+            <figure class="plate" style="max-height: 200px;">
               <img src="rentgen_Photo_by_martinvorel.jpg"
                 alt="תמונת יד מצביעה על צילום רנטגן של מרפק ולידו ערמת תרופות">
             </figure>
@@ -949,7 +1057,7 @@
             <dt>אבחון יתר <br>(<span lang="en">Overdiagnosis</span>)</dt>
             <dd>אבחון של מצב או מחלה שאכן קיימים, אך לא היו גורמים לתסמינים או לתמותה גם אילו לא היו מאובחנים. זה אינו
               אבחון שגוי ואינו תוצאה חיובית כוזבת — המחלה נמצאת שם, אך הגילוי שלה אינו מיטיב עם מי שאובחן.</dd>
-            <figure class="plate">
+            <figure class="plate" style="max-height: 500px;">
               <figcaption class="caption">כשכל ממצא גורר בדיקה נוספת, המטופל נעלם מתחת לתוצאות.</figcaption>
               <figcaption><span class="credit">(תמונה להמחשה, נוצרה באמצעות <bdi lang="en">Google Gemini</bdi>)</span>
               </figcaption>
