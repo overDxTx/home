@@ -32,6 +32,7 @@
     *::before,
     *::after {
       box-sizing: border-box;
+      justify-content: center;
     }
 
     html {
@@ -49,7 +50,7 @@
       background: var(--paper);
       color: var(--ink);
       font-family: var(--font);
-      font-size: 1.0625rem;
+      font-size: 1rem;
       text-align: justify;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -107,7 +108,6 @@
       /*max-width: 1040px;*/
       margin-inline: auto;
       padding-inline: 1rem;
-
       container-type: inline-size;
       max-width: 80rem;
       /* Adjust based on your preferred maximum spread */
@@ -253,7 +253,7 @@
       flex-grow: 1;
       flex-shrink: 10;
       flex-basis: 80%;
-      background-color: #ffffff;
+      background: var(--surface);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       padding: 0.6rem;
       direction: rtl;
@@ -359,14 +359,20 @@
 
     .plate {
       border-radius: 15px;
+      width: fit-content;
       overflow: hidden;
-      margin-inline: 0.7rem;
+      margin-inline: auto;
+      max-width: 100%;
     }
-
+figure.plate {
+  display: flex;
+  flex-direction: column;
+}
     .plate img {
       display: block;
-      width: 100%;
       height: auto;
+      width: auto;
+      max-width: 100%;
     }
 
     .credit {
@@ -446,6 +452,7 @@
       padding-block: 22px;
       border-top: 1px solid var(--rule);
       display: grid;
+      justify-content: center;
       grid-template-columns: 30% 2fr 3fr;
       gap: 1rem;
       grid-auto-flow: row;
@@ -487,7 +494,14 @@
       /* Allows natural scaling */
     }
 
-    /*****/
+    .def figure {
+      justify-self: center;
+      /* Centers the figure block in the grid cell */
+      display: flex;
+      justify-content: center;
+      /* Centers the inner image if it's smaller than the figure */
+    }
+
     .def {
       display: grid;
       /* Default: 1 row with 3 equally stretched columns */
@@ -495,6 +509,7 @@
       gap: 1rem;
       width: 100%;
       align-items: stretch;
+      justify-content: center;
     }
 
     /* Forces the items (and the image inside <figure>) to stretch fully */
@@ -502,12 +517,14 @@
     .def>dd,
     .def>figure {
       margin: 0;
-      /* Clears default browser margins for dd and figure */
       width: 100%;
+    }
+    .def>figure {
+      width: fit-content;
     }
 
     .def img {
-      width: 100%;
+      width: auto;
       height: 100%;
       object-fit: cover;
       /* Prevents the image from stretching out of proportion */
@@ -568,7 +585,7 @@
       padding-inline-start: 18px;
       max-width: var(--measure);
       color: var(--ink);
-      font-size: 1.0938rem;
+      font-size: 1rem;
       font-weight: 600;
     }
 
@@ -580,6 +597,7 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
       gap: 10px 40px;
       align-items: start;
+      justify-content: center;
     }
 
     .track:first-of-type {
@@ -697,6 +715,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 34px 48px;
+      justify-content: center;
     }
 
     .cols h3 {
