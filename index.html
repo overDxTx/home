@@ -330,6 +330,73 @@
       }
     }
 
+    /* Base styling for the hamburger button (matches .accessicon) */
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .menu-toggle:hover {
+      border-color: var(--ink);
+    }
+
+    .menu-toggle svg {
+      display: block;
+    }
+
+    /* Ensure positioning context for dropdown placement */
+    .bar2 {
+      position: relative;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      nav#mainNav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        inset-inline: 0;
+        width: 100%;
+        background: var(--surface);
+        border-bottom: 1px solid var(--rule);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      /* Revealed state */
+      nav#mainNav.is-open {
+        display: block;
+      }
+
+      nav#mainNav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+      }
+
+      nav#mainNav a {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        text-align: right;
+      }
+    }
+
     /* Hero */
     .hero {
       padding-block: 64px 52px;
@@ -364,10 +431,12 @@
       margin-inline: auto;
       max-width: 100%;
     }
-figure.plate {
-  display: flex;
-  flex-direction: column;
-}
+
+    figure.plate {
+      display: flex;
+      flex-direction: column;
+    }
+
     .plate img {
       display: block;
       height: auto;
@@ -519,6 +588,7 @@ figure.plate {
       margin: 0;
       width: 100%;
     }
+
     .def>figure {
       width: fit-content;
     }
@@ -1001,7 +1071,22 @@ figure.plate {
       </div>
     </div>
     <div class="wrap bar2">
-      <nav aria-label="ניווט ראשי">
+      <!-- Mobile Menu Button -->
+      <button type="button" id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mainNav"
+        aria-label="פתיחת תפריט ניווט">
+        <svg class="icon-burger" viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="ניווט ראשי">
         <ul>
           <li><a href="#what">העניין</a></li>
           <li><a href="#why">למה זה חשוב</a></li>
@@ -1355,6 +1440,56 @@ figure.plate {
       addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
       addEventListener('resize', update); update();
     })();
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      const iconBurger = menuToggle.querySelector('.icon-burger');
+      const iconClose = menuToggle.querySelector('.icon-close');
+      const navLinks = mainNav.querySelectorAll('a');
+
+      function toggleMenu(open) {
+        const shouldOpen = open !== undefined ? open : !mainNav.classList.contains('is-open');
+
+        mainNav.classList.toggle('is-open', shouldOpen);
+        menuToggle.setAttribute('aria-expanded', String(shouldOpen));
+        menuToggle.setAttribute('aria-label', shouldOpen ? 'סגירת תפריט ניווט' : 'פתיחת תפריט ניווט');
+
+        iconBurger.toggleAttribute('hidden', shouldOpen);
+        iconClose.toggleAttribute('hidden', !shouldOpen);
+      }
+
+      menuToggle.addEventListener('click', () => toggleMenu());
+
+      // Close menu when a navigation item is selected (standard for single-page hash anchors)
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            toggleMenu(false);
+          }
+        });
+      });
+
+      // Close with Esc key for keyboard accessibility
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
+          toggleMenu(false);
+          menuToggle.focus();
+        }
+      });
+
+      // Close if clicking outside the menu dropdown
+      document.addEventListener('click', (e) => {
+        if (
+          mainNav.classList.contains('is-open') &&
+          !mainNav.contains(e.target) &&
+          !menuToggle.contains(e.target)
+        ) {
+          toggleMenu(false);
+        }
+      });
+    });
   </script>
 </body>
 
