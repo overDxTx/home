@@ -10,8 +10,7 @@
   <meta property="og:title" content="החברה למניעת אבחון יתר וטיפול יתר">
   <meta property="og:description" content="רפואה טובה יודעת גם מתי לא לבדוק ומתי לא לטפל.">
   <meta property="og:locale" content="he_IL">
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22%23C8102E%22%20stroke-width%3D%229%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M34%2026%20L32%2031%20C30%2048%2033%2050%2039%2052%22%2F%3E%3Cpath%20d%3D%22M51%2026%20L53%2030%20C55%2048%2050%2055%2039%2052%22%2F%3E%3Cpath%20d%3D%22M43%2055%20C42%2074%2050%2086%2060%2069%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2262%22%20r%3D%227%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="icon" type="image/svg+xml" href="overDxTxLogo2.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,7 +31,6 @@
     *::before,
     *::after {
       box-sizing: border-box;
-      justify-content: center;
     }
 
     html {
@@ -59,10 +57,9 @@
     h1,
     h2,
     h3 {
-      font-family: var(--font);
       font-weight: 600;
       line-height: 1.24;
-      letter-spacing: -0.018em;
+      letter-spacing: -.018em;
       margin: 0;
     }
 
@@ -72,12 +69,11 @@
 
     img {
       object-fit: cover;
-      object-position: center;
     }
 
     a {
       color: var(--ink);
-      text-underline-offset: 0.22em;
+      text-underline-offset: .22em;
       text-decoration-thickness: 1px;
     }
 
@@ -93,7 +89,7 @@
 
     .join :focus-visible {
       outline-color: #fff;
-      box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 0 6px rgb(0 0 0 / .5);
     }
 
     [id] {
@@ -105,14 +101,10 @@
     }
 
     .wrap {
-      /*max-width: 1040px;*/
       margin-inline: auto;
       padding-inline: 1rem;
       container-type: inline-size;
       max-width: 80rem;
-      /* Adjust based on your preferred maximum spread */
-      margin-inline: auto;
-
     }
 
     .sr-only {
@@ -127,7 +119,6 @@
       border: 0;
     }
 
-    /* Skip link */
     .skip {
       position: absolute;
       inset-inline-start: -9999px;
@@ -142,13 +133,12 @@
       top: 12px;
     }
 
-    /* Header & Navigation */
     header {
       position: sticky;
       text-align: center;
       top: 0;
       z-index: 5;
-      background: rgba(242, 244, 243, 0.93);
+      background: rgb(242 244 243 / .93);
       backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--rule);
     }
@@ -164,9 +154,10 @@
     }
 
     .bar2 {
+      position: relative;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: .5rem;
       align-items: center;
       justify-content: space-between;
       border-top: 1px solid var(--rule);
@@ -183,9 +174,8 @@
       gap: 12px;
       font-size: 2rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
+      letter-spacing: -.02em;
       line-height: 1.3;
-      /* height: 5rem; */
     }
 
     .glyph {
@@ -199,30 +189,28 @@
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--ink-soft);
-      letter-spacing: 0.02em;
+      letter-spacing: .02em;
     }
 
     .partners {
       display: flex;
       flex-grow: 1;
       align-items: center;
-      /* Replaces invalid 'flex' */
-      gap: 0.75rem;
+      gap: .75rem;
     }
 
     .partners .logo {
-      box-sizing: border-box;
       height: 4rem;
-      /* ~52px total box height */
       display: inline-flex;
       align-items: center;
       background: var(--surface);
       border: 1px solid var(--rule);
-      padding: 0.35rem 0.65rem;
+      padding: .35rem .65rem;
     }
 
     .right-logo {
       margin-left: auto;
+      height: 4rem;
     }
 
     .partners .logo:hover {
@@ -234,11 +222,9 @@
       height: 100%;
       width: auto;
       object-fit: contain;
-      /* Preserves aspect ratio */
     }
 
     @media (max-width: 860px) {
-
       .partners .logo {
         padding: 4px 6px;
       }
@@ -249,41 +235,34 @@
     }
 
     nav {
-      /*max-width: 94%;*/
-      flex-grow: 1;
-      flex-shrink: 10;
-      flex-basis: 80%;
+      flex: 1 10 80%;
       background: var(--surface);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      padding: 0.6rem;
+      box-shadow: 0 2px 10px rgb(0 0 0 / .05);
+      padding: .6rem;
       direction: rtl;
-      /* תמיכה מלאה בעברית */
+      border-radius: 15px;
     }
 
     nav ul {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 0.8rem;
+      gap: .4em;
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 0.8rem;
+      font-size: .8rem;
     }
 
     nav a {
-      color: var(--ink);
       text-decoration: none;
-      padding-block: 4px;
-      border-bottom: 1px solid transparent;
-      text-decoration: none;
-      color: #4a5568;
+      border-bottom: 1px solid #fff0;
+      color: var(--imablue);
       font-family: system-ui, sans-serif;
       font-size: 1rem;
       font-weight: 500;
       padding: 1rem;
       border-radius: 1rem;
-      /* יוצר מראה של קפסולה */
       transition: all 0.25s ease;
     }
 
@@ -300,37 +279,27 @@
 
     @media (max-width: 932px) {
       nav a {
-        padding-block: 3px;
-        border-bottom: 1px solid transparent;
-        font-size: 0.9rem;
-        font-weight: 500;
-        padding: 0.4rem;
-        border-radius: 0.8rem;
+        font-size: .9rem;
+        padding: .4rem;
+        border-radius: .8rem;
       }
 
       .mark {
-
         gap: 5px;
         font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
         line-height: 1;
-        /* height: 5rem; */
       }
 
       .glyph {
         width: 70px;
         height: 70px;
-        flex: none;
       }
 
       .mark .wordmark span {
         font-size: 1rem;
-
       }
     }
 
-    /* Base styling for the hamburger button (matches .accessicon) */
     .menu-toggle {
       display: none;
       align-items: center;
@@ -339,7 +308,6 @@
       height: 40px;
       padding: 0;
       background: var(--surface);
-      color: var(--ink);
       border: 1px solid var(--rule);
       border-radius: 50%;
       cursor: pointer;
@@ -354,12 +322,6 @@
       display: block;
     }
 
-    /* Ensure positioning context for dropdown placement */
-    .bar2 {
-      position: relative;
-    }
-
-    /* Mobile styles */
     @media (max-width: 768px) {
       .menu-toggle {
         display: inline-flex;
@@ -373,39 +335,37 @@
         width: 100%;
         background: var(--surface);
         border-bottom: 1px solid var(--rule);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1);
         padding: 1rem;
         z-index: 100;
+        border-radius: 15px;
       }
 
-      /* Revealed state */
       nav#mainNav.is-open {
         display: block;
+        width: fit-content;
       }
 
       nav#mainNav ul {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.4rem;
+        gap: .4rem;
       }
 
       nav#mainNav a {
         display: block;
-        width: 100%;
-        padding: 0.75rem 1rem;
+        padding: .75rem 1rem;
         text-align: right;
       }
     }
 
-    /* Hero */
     .hero {
       padding-block: 64px 52px;
       display: flex;
       flex-direction: column;
       align-content: start;
-      align-items: start;
+      align-items: flex-start;
       justify-content: flex-start;
-      /* דוחף את התוכן למעלה */
     }
 
     .hero-text {
@@ -413,14 +373,13 @@
       display: flex;
       flex-direction: column;
       align-content: start;
-      justify-content: start;
-      /* דוחף את התוכן למעלה */
+      justify-content: flex-start;
     }
 
     .hero h1 {
       font-size: clamp(2rem, 3.4vw, 2.75rem);
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: -.03em;
       max-width: 16ch;
     }
 
@@ -447,13 +406,13 @@
     .credit {
       display: block;
       margin-top: 6px;
-      font-size: 0.8125rem;
+      font-size: .8125rem;
       text-align: center;
     }
 
     .caption {
       margin: 10px 0 0;
-      font-size: 0.9rem;
+      font-size: .9rem;
       color: var(--ink-soft);
       max-width: 62ch;
       line-height: 1.6;
@@ -470,7 +429,6 @@
 
       .hero h1 {
         font-size: clamp(2.0625rem, 5.4vw, 3.5rem);
-        margin-bottom: 0;
       }
 
       .plate {
@@ -482,7 +440,6 @@
     .logo1 {
       padding-block: 64px 52px;
       width: 25%;
-      max-width: 25%;
     }
 
     .logo2 img {
@@ -492,7 +449,6 @@
       margin: 0;
     }
 
-    /* Sections */
     section {
       padding-block: 64px;
       border-top: 1px solid var(--rule);
@@ -507,12 +463,9 @@
       color: var(--ink-soft);
       max-width: var(--measure);
       font-size: clamp(1rem, 2vw, 1.25rem);
-      /* Scales from 16px to 20px */
       margin-bottom: clamp(1.5rem, 4vw, 2.125rem);
-      /* Scales from 24px to 34px */
     }
 
-    /* Definitions */
     dl {
       margin: 0;
     }
@@ -521,11 +474,11 @@
       padding-block: 22px;
       border-top: 1px solid var(--rule);
       display: grid;
-      justify-content: center;
-      grid-template-columns: 30% 2fr 3fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      grid-auto-flow: row;
-      grid-auto-rows: auto;
+      width: 100%;
+      align-items: stretch;
+      justify-content: center;
     }
 
     .def:first-of-type {
@@ -536,97 +489,63 @@
     .def dt {
       font-size: 1.25rem;
       font-weight: 600;
-      letter-spacing: -0.015em;
+      letter-spacing: -.015em;
     }
 
     .def dt em {
       font-style: normal;
-      font-size: 0.875rem;
+      font-size: .875rem;
       font-weight: 400;
       color: var(--ink-soft);
       margin-inline-start: 10px;
-      letter-spacing: 0.01em;
+      letter-spacing: .01em;
     }
 
     .def dd {
-      margin: 6px 0 0;
       max-width: var(--measure);
       color: var(--ink-soft);
     }
 
-    .def img {
-      max-height: 50vw;
-      /* Limits the maximum height */
-      width: 100%;
-      /* Keeps the correct aspect ratio */
-      height: auto;
-      /* Allows natural scaling */
-    }
-
-    .def figure {
-      justify-self: center;
-      /* Centers the figure block in the grid cell */
-      display: flex;
-      justify-content: center;
-      /* Centers the inner image if it's smaller than the figure */
-    }
-
-    .def {
-      display: grid;
-      /* Default: 1 row with 3 equally stretched columns */
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      width: 100%;
-      align-items: stretch;
-      justify-content: center;
-    }
-
-    /* Forces the items (and the image inside <figure>) to stretch fully */
     .def>dt,
-    .def>dd,
-    .def>figure {
+    .def>dd {
       margin: 0;
       width: 100%;
     }
 
     .def>figure {
+      margin: 0;
       width: fit-content;
+      justify-self: center;
+      display: flex;
+      justify-content: center;
     }
 
     .def img {
+      max-height: 50vw;
       width: auto;
       height: 100%;
-      object-fit: cover;
-      /* Prevents the image from stretching out of proportion */
     }
 
-    /* Breakpoint 1: Below 38rem -> 2 rows (Title/Subtitle on top, Image wide below) */
     @container (max-width: 45em) {
       .def {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      /* Selects the 3rd item (figure) and stretches it across both columns */
       .def> :nth-child(3) {
         grid-column: span 2;
       }
     }
 
-    /* Breakpoint 2: Below 19rem -> 3 stacked rows */
     @container (max-width: 25em) {
       .def {
         grid-template-columns: 1fr;
       }
 
-      /* Resets the 3rd item to a single column width for the 1-column layout*/
       .def> :nth-child(3) {
         grid-column: span 1;
       }
     }
 
-    /*****/
-
-    /* Harms */
     .harms {
       list-style: none;
       margin: 0 0 28px;
@@ -659,7 +578,6 @@
       font-weight: 600;
     }
 
-    /* Tracks */
     .track {
       padding-block: 30px;
       border-top: 1px solid var(--rule);
@@ -690,11 +608,8 @@
 
     .track img {
       max-height: 20vw;
-      /* Limits the maximum height */
       width: 100%;
-      /* Keeps the correct aspect ratio */
       height: auto;
-      /* Allows natural scaling */
     }
 
     @media (max-width: 720px) {
@@ -704,7 +619,6 @@
       }
     }
 
-    /* Join */
     .join {
       background: var(--imablue);
       color: #EAF1EF;
@@ -716,7 +630,6 @@
     }
 
     .join p {
-      color: #EAF1EF;
       max-width: 56ch;
     }
 
@@ -736,8 +649,7 @@
     }
 
     .join .small {
-      font-size: 0.9375rem;
-      color: #EAF1EF;
+      font-size: .9375rem;
       margin-top: 22px;
     }
 
@@ -745,7 +657,6 @@
       color: #fff;
     }
 
-    /* Resources */
     .res {
       list-style: none;
       margin: 0;
@@ -775,12 +686,11 @@
 
     .res span {
       display: block;
-      font-size: 0.9688rem;
+      font-size: .9688rem;
       color: var(--ink-soft);
       margin-top: 3px;
     }
 
-    /* Board & Contacts */
     .cols {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -806,14 +716,13 @@
 
     .people .role {
       color: var(--ink-soft);
-      font-size: 0.9rem;
+      font-size: .9rem;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--rule);
       padding-block: 32px 44px;
-      font-size: 0.9rem;
+      font-size: .9rem;
       color: var(--ink-soft);
     }
 
@@ -852,11 +761,10 @@
     .affil p {
       max-width: 36ch;
       margin: 0;
-      font-size: 0.875rem;
+      font-size: .875rem;
       line-height: 1.55;
     }
 
-    /* Accessibility Toolbar */
     .accesswrap {
       display: flex;
       align-items: center;
@@ -875,14 +783,11 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       direction: rtl;
-      /* Maintains right-to-left flow for Hebrew */
-      /* The periods (.) represent the empty cells from your Excel sheet */
       grid-template-areas:
         "lbl-txt  lbl-txt lbl-con lbl-con btn-reset btn-close"
-        "btn-f-up btn-f-dn btn-c-up btn-c-dn  btn-reset btn-close";
+        "btn-f-up btn-f-dn btn-c-up btn-c-dn btn-reset btn-close";
     }
 
-    /* Assigning each HTML element to its designated grid slot */
     #access-text {
       grid-area: lbl-txt;
     }
@@ -917,7 +822,7 @@
 
     .accessbar button {
       font-family: inherit;
-      font-size: 0.875rem;
+      font-size: .875rem;
       line-height: 1.1;
       background: var(--surface);
       color: var(--ink);
@@ -935,12 +840,12 @@
       border: none;
       background: none;
       padding: 7px 6px;
-      font-size: 0.9375rem;
+      font-size: .9375rem;
       margin-inline-start: 2px;
     }
 
     .accessbar .lbl {
-      font-size: 0.8125rem;
+      font-size: .8125rem;
       margin-inline-end: 2px;
       text-align: center;
     }
@@ -974,7 +879,6 @@
       height: 22px;
     }
 
-    /* High Contrast Modes */
     html[data-contrast="1"] {
       --paper: #FFFFFF;
       --surface: #FFFFFF;
@@ -986,7 +890,7 @@
     }
 
     html[data-contrast="1"] header {
-      background: #FFFFFF;
+      background: #FFF;
     }
 
     html[data-contrast="2"] {
@@ -1000,7 +904,7 @@
     }
 
     html[data-contrast="2"] header {
-      background: #000000;
+      background: #000;
     }
 
     html[data-contrast="2"] a {
@@ -1008,20 +912,20 @@
     }
 
     html[data-contrast="2"] .glyph g {
-      stroke: #FFFFFF;
+      stroke: #FFF;
     }
 
     html[data-contrast="2"] .join {
-      border-top: 1px solid #FFFFFF;
+      border-top: 1px solid #FFF;
     }
 
     html[data-contrast="2"] .join :is(h2, p, .small, .small a) {
-      color: #FFFFFF;
+      color: #FFF;
     }
 
     html[data-contrast="2"] .join a.cta {
       background: #FFD400;
-      color: #000000;
+      color: #000;
     }
 
     html[data-contrast="2"] .note {
@@ -1030,7 +934,7 @@
 
     html[data-contrast="2"] :focus-visible {
       outline-color: #FFD400;
-      box-shadow: 0 0 0 6px #000000;
+      box-shadow: 0 0 0 6px #000;
     }
   </style>
 </head>
@@ -1044,25 +948,8 @@
         <span class="wordmark">החברה למניעת אבחון יתר וטיפול יתר<span>חברה מדעית בהסתדרות הרפואית בישראל</span></span>
       </div>
       <div class="partners">
-        <svg class="glyph right-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 720 720" width="100%" height="100%" overflow="hidden">
-          <g>
-            <rect x="0" y="0" fill="#FFF"></rect>
-            <path d="M2 355C2 164 162 10 360 10 558 10 718 164 718 355 718 546 558 700 360 700 162 700 2 546 2 355Z"
-              fill="#F00" fill-rule="evenodd"></path>
-            <path d="M81 357C81 205 205 83 359 83 512 83 636 205 636 357 636 508 512 630 359 630 205 630 81 508 81 357Z"
-              fill="#FFF" fill-rule="evenodd"></path>
-            <path
-              d="M539 298C539 269 516 246 488 246 459 246 436 269 436 298 436 323 455 345 480 349L480 473C480 519 441 591 394 591 347 591 310 519 310 473L307 303C352 301 395 279 395 229 395 227 396 220 394 219L395 169C395 155 383 144 369 144L366 144 366 143C364 139 361 136 357 136L354 136C346 136 341 142 341 149 341 156 346 162 354 162L357 162C361 162 364 159 366 156L366 154 369 154C378 154 385 161 385 169 385 186 385 203 385 220 383 221 383 226 383 228 389 276 329 294 302 294 275 294 222 271 222 227 222 225 221 223 219 222 220 204 220 187 220 169 220 161 227 154 235 154L239 154 239 156C240 159 244 162 248 162L251 162C258 162 264 156 264 149 264 142 258 136 251 136L248 136C244 136 240 139 239 143L239 144 235 144C221 144 210 155 210 169 210 186 210 203 210 220 208 222 208 226 208 228 208 277 274 303 293 303 294 359 294 416 295 473 295 528 338 605 394 605 449 605 495 528 495 473L495 349C520 345 539 323 539 298ZM490 339C488 338 487 338 485 339 462 338 445 318 446 295 448 273 467 255 490 257 513 258 530 277 529 300 527 321 511 338 490 339Z"
-              fill="#F00" fill-rule="evenodd"></path>
-            <path
-              d="M488 270C472 270 459 283 459 298 459 313 472 326 488 326 503 326 516 313 516 298 516 283 503 270 488 270ZM488 316C477 316 469 308 469 298 469 288 477 280 488 280 498 280 506 288 506 298 506 308 498 316 488 316Z"
-              fill-rule="evenodd"></path>
-            <path
-              d="M453 298C453 279 468 264 488 264 507 264 523 279 523 298 523 317 507 333 488 333 468 333 453 317 453 298Z"
-              stroke="#F2F2F2" stroke-width="13" stroke-miterlimit="8" fill="none" fill-rule="evenodd"></path>
-          </g>
-        </svg>
+        <img class="glyph logo right-logo" src="overDxTxLogo2.svg"
+          alt="לוגו החברה למניעת אבחון יתר וטיפול יתר, כעין שלט אזהרה עגול עם הכיתוב PRIMUM NON NOCERE ראשית בל נזיק. ובמרכזו סטטוסקופ">
         <a class="logo" href="https://www.ima.org.il/" target="_blank" rel="noopener noreferrer"><img
             src="footer-hri-logo.jpg" alt="ההסתדרות הרפואית בישראל"><span class="sr-only"> (נפתח בחלון חדש)</span></a>
         <a class="logo" href="https://associations.ima.org.il/" target="_blank" rel="noopener noreferrer"><img
@@ -1075,13 +962,13 @@
       <button type="button" id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mainNav"
         aria-label="פתיחת תפריט ניווט">
         <svg class="icon-burger" viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          stroke="var(--imablue)" stroke-width="2" stroke-linecap="round">
           <line x1="4" y1="6" x2="20" y2="6"></line>
           <line x1="4" y1="12" x2="20" y2="12"></line>
           <line x1="4" y1="18" x2="20" y2="18"></line>
         </svg>
         <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" hidden>
+          stroke="var(--imablue)" stroke-width="2" stroke-linecap="round" hidden>
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
